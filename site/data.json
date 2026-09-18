@@ -1,130 +1,128 @@
 {
-  "generated_at": "2026-09-18T21:04:19+00:00",
+  "generated_at": "2026-09-18T21:08:55+00:00",
   "latest": {
     "season": 2026,
-    "week": 3,
+    "week": 2,
     "status": "no_qualifying_edge",
-    "generated_at": "2026-09-18T18:20:50.820861+00:00",
+    "generated_at": "2026-09-18T04:38:20.710966+00:00",
     "games_evaluated": 16,
     "qualifying_picks": 0,
     "insufficient_history": true,
     "notes": "Only 1 game(s) of in-season history; rolling features are near-empty this early and no edge should be expected.",
-    "history_source_counts": {
-      "blended_prior_season": 32
-    },
+    "history_source_counts": {},
     "picks": [],
     "games": [
       {
-        "game_id": "2026_03_ARI_SF",
+        "game_id": "2026_02_SEA_ARI",
         "team_a": "ARI",
-        "prob_a": 0.2624,
-        "team_b": "SF",
-        "prob_b": 0.7927
+        "prob_a": 0.3958,
+        "team_b": "SEA",
+        "prob_b": 0.6629
       },
       {
-        "game_id": "2026_03_ATL_GB",
+        "game_id": "2026_02_CAR_ATL",
         "team_a": "ATL",
-        "prob_a": 0.3174,
-        "team_b": "GB",
-        "prob_b": 0.7294
+        "prob_a": 0.3818,
+        "team_b": "CAR",
+        "prob_b": 0.6231
       },
       {
-        "game_id": "2026_03_BAL_DAL",
+        "game_id": "2026_02_NO_BAL",
         "team_a": "BAL",
-        "prob_a": 0.6081,
-        "team_b": "DAL",
-        "prob_b": 0.4516
-      },
-      {
-        "game_id": "2026_03_LAC_BUF",
-        "team_a": "BUF",
-        "prob_a": 0.5221,
-        "team_b": "LAC",
-        "prob_b": 0.4658
-      },
-      {
-        "game_id": "2026_03_CAR_CLE",
-        "team_a": "CAR",
-        "prob_a": 0.588,
-        "team_b": "CLE",
-        "prob_b": 0.4386
-      },
-      {
-        "game_id": "2026_03_PHI_CHI",
-        "team_a": "CHI",
-        "prob_a": 0.5849,
-        "team_b": "PHI",
-        "prob_b": 0.437
-      },
-      {
-        "game_id": "2026_03_CIN_PIT",
-        "team_a": "CIN",
-        "prob_a": 0.6036,
-        "team_b": "PIT",
-        "prob_b": 0.4215
-      },
-      {
-        "game_id": "2026_03_LA_DEN",
-        "team_a": "DEN",
-        "prob_a": 0.4241,
-        "team_b": "LA",
-        "prob_b": 0.5923
-      },
-      {
-        "game_id": "2026_03_NYJ_DET",
-        "team_a": "DET",
-        "prob_a": 0.5017,
-        "team_b": "NYJ",
-        "prob_b": 0.488
-      },
-      {
-        "game_id": "2026_03_HOU_IND",
-        "team_a": "HOU",
-        "prob_a": 0.5914,
-        "team_b": "IND",
-        "prob_b": 0.3896
-      },
-      {
-        "game_id": "2026_03_NE_JAX",
-        "team_a": "JAX",
-        "prob_a": 0.6334,
-        "team_b": "NE",
-        "prob_b": 0.416
-      },
-      {
-        "game_id": "2026_03_KC_MIA",
-        "team_a": "KC",
-        "prob_a": 0.6853,
-        "team_b": "MIA",
-        "prob_b": 0.2963
-      },
-      {
-        "game_id": "2026_03_LV_NO",
-        "team_a": "LV",
-        "prob_a": 0.3778,
+        "prob_a": 0.7264,
         "team_b": "NO",
-        "prob_b": 0.5818
+        "prob_b": 0.2225
       },
       {
-        "game_id": "2026_03_MIN_TB",
-        "team_a": "MIN",
-        "prob_a": 0.4518,
+        "game_id": "2026_02_DET_BUF",
+        "team_a": "BUF",
+        "prob_a": 0.7296,
+        "team_b": "DET",
+        "prob_b": 0.2888
+      },
+      {
+        "game_id": "2026_02_MIN_CHI",
+        "team_a": "CHI",
+        "prob_a": 0.644,
+        "team_b": "MIN",
+        "prob_b": 0.3277
+      },
+      {
+        "game_id": "2026_02_CIN_HOU",
+        "team_a": "CIN",
+        "prob_a": 0.513,
+        "team_b": "HOU",
+        "prob_b": 0.5381
+      },
+      {
+        "game_id": "2026_02_CLE_TB",
+        "team_a": "CLE",
+        "prob_a": 0.2973,
         "team_b": "TB",
-        "prob_b": 0.5476
+        "prob_b": 0.7621
       },
       {
-        "game_id": "2026_03_TEN_NYG",
-        "team_a": "NYG",
-        "prob_a": 0.712,
-        "team_b": "TEN",
-        "prob_b": 0.2702
-      },
-      {
-        "game_id": "2026_03_SEA_WAS",
-        "team_a": "SEA",
-        "prob_a": 0.6503,
+        "game_id": "2026_02_WAS_DAL",
+        "team_a": "DAL",
+        "prob_a": 0.674,
         "team_b": "WAS",
-        "prob_b": 0.3877
+        "prob_b": 0.3519
+      },
+      {
+        "game_id": "2026_02_JAX_DEN",
+        "team_a": "DEN",
+        "prob_a": 0.5051,
+        "team_b": "JAX",
+        "prob_b": 0.4892
+      },
+      {
+        "game_id": "2026_02_GB_NYJ",
+        "team_a": "GB",
+        "prob_a": 0.6497,
+        "team_b": "NYJ",
+        "prob_b": 0.3936
+      },
+      {
+        "game_id": "2026_02_IND_KC",
+        "team_a": "IND",
+        "prob_a": 0.3179,
+        "team_b": "KC",
+        "prob_b": 0.6734
+      },
+      {
+        "game_id": "2026_02_NYG_LA",
+        "team_a": "LA",
+        "prob_a": 0.7168,
+        "team_b": "NYG",
+        "prob_b": 0.3774
+      },
+      {
+        "game_id": "2026_02_LV_LAC",
+        "team_a": "LAC",
+        "prob_a": 0.6527,
+        "team_b": "LV",
+        "prob_b": 0.3454
+      },
+      {
+        "game_id": "2026_02_MIA_SF",
+        "team_a": "MIA",
+        "prob_a": 0.2008,
+        "team_b": "SF",
+        "prob_b": 0.8024
+      },
+      {
+        "game_id": "2026_02_PIT_NE",
+        "team_a": "NE",
+        "prob_a": 0.6503,
+        "team_b": "PIT",
+        "prob_b": 0.3702
+      },
+      {
+        "game_id": "2026_02_PHI_TEN",
+        "team_a": "PHI",
+        "prob_a": 0.6765,
+        "team_b": "TEN",
+        "prob_b": 0.2985
       }
     ]
   },

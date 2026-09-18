@@ -305,7 +305,8 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
           }).join("")+'</tbody></table></div></div>';
       } else {
         body='<div class="panel-body"><div class="empty">'+
-          '<span class="big">No games loaded for this week yet.</span>'+
+          '<span class="big">Predictions for this week aren\'t posted yet.</span>'+
+          (L.notes?'<span class="why">'+esc(L.notes)+'</span>':'')+
           '</div></div>';
       }
       document.getElementById("weekPanel").innerHTML=head+body;

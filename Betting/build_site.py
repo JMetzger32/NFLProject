@@ -29,6 +29,41 @@ MODEL_1_DATA = PROJECT_ROOT / "Modeling" / "Model_1" / "data" / "03_primary.csv"
 MODEL_2_EDGE = PROJECT_ROOT / "Modeling" / "Model_2" / "data" / "07_edge_yield.csv"
 
 
+def current_week() -> tuple[int, int] | None:
+    """The week the site should be showing right now: the earliest week of the
+    most recent season that is NOT yet fully complete.
+
+    Deliberately NOT "whichever picks_*.json file was generated most recently" —
+    that surfaced a week-3 testing artifact as "current" while week 2 games were
+    still in progress, before week 2 had a single result in. A week only becomes
+    "current" by playing out, never by a file existing for it.
+    """
+    try:
+        from src.db import get_engine
+        d = pd.read_sql("""
+            SELECT season, week,
+                   count(*) AS games,
+                   count(result) AS completed
+            FROM games
+            WHERE game_type = 'REG'
+            GROUP BY season, week
+            ORDER BY season, week
+        """, get_engine())
+    except Exception:
+        return None
+    if d.empty:
+        return None
+
+    season = int(d["season"].max())
+    s = d[d["season"] == season]
+    incomplete = s[s["completed"] < s["games"]]
+    if len(incomplete):
+        row = incomplete.iloc[0]  # earliest not-yet-finished week
+    else:
+        row = s.iloc[-1]  # season fully played out — show its last week
+    return season, int(row["week"])
+
+
 def read_weeks() -> list[dict]:
     weeks = []
     for f in sorted(OUT_DIR.glob("picks_*.json")):
@@ -70,10 +105,32 @@ def _pair_games(all_games: list[dict]) -> list[dict]:
 
 
 def latest_week() -> dict | None:
+    cw = current_week()
     weeks = read_weeks()
     if not weeks:
         return None
-    newest = weeks[-1]
+
+    if cw is not None:
+        season, week = cw
+        match = next((w for w in weeks
+                     if w["season"] == season and w["week"] == week), None)
+        if match is None:
+            # The actually-current week hasn't had predictions generated yet.
+            # Say so rather than silently showing a different week.
+            return {
+                "season": season, "week": week, "status": "not_yet_generated",
+                "games_evaluated": 0, "qualifying_picks": 0,
+                "notes": (f"Predictions for {season} week {week} haven't been "
+                         f"generated yet. Run weekly_picks.py --season {season} "
+                         f"--week {week}."),
+                "history_source_counts": {}, "picks": [], "games": [],
+            }
+        newest = match
+    else:
+        # No DB connection to determine the real current week (e.g. building the
+        # site without Postgres running) — fall back to the newest generated file.
+        newest = weeks[-1]
+
     p = json.loads((OUT_DIR / newest["file"]).read_text())
     return {
         "season": p["season"], "week": p["week"],
