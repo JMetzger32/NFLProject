@@ -114,10 +114,18 @@ def _pair_games(all_games: list[dict]) -> list[dict]:
             norm_a, norm_b = pa, pb
 
         market_a = a.get("market_prob_devig")
-        # Edge from team_a's side is the whole story: since prob_a+prob_b == 1 and
-        # market_a+market_b == 1, edge_b is always exactly -edge_a. Showing team_a's
-        # signed edge alone is complete, not a simplification that drops information.
+        market_b = b.get("market_prob_devig")
+        # edge_b is always exactly -edge_a (both prob_a+prob_b and market_a+market_b
+        # sum to 1), so either side is the complete number — but which side reads
+        # naturally depends on who the model actually favors.
         edge_a = (norm_a - market_a) if (norm_a is not None and market_a is not None) else None
+
+        favorite_team, edge_favorite = None, None
+        if norm_a is not None and norm_b is not None and edge_a is not None:
+            if norm_a >= norm_b:
+                favorite_team, edge_favorite = a.get("team"), edge_a
+            else:
+                favorite_team, edge_favorite = b.get("team"), -edge_a
 
         games.append({
             "game_id": gid,
@@ -125,9 +133,10 @@ def _pair_games(all_games: list[dict]) -> list[dict]:
             "team_b": b.get("team"), "prob_b": norm_b, "prob_b_raw": pb,
             # De-vigged market probability — already sums to 1 across the two
             # sides by construction (Shin de-vig), so no renormalization needed.
-            "market_a": market_a,
-            "market_b": b.get("market_prob_devig"),
-            "edge_a": edge_a,
+            "market_a": market_a, "market_b": market_b,
+            # The model's favorite (higher of prob_a/prob_b) and ITS edge vs the
+            # market — the number that reads naturally, not always team_a's.
+            "favorite_team": favorite_team, "edge_favorite": edge_favorite,
         })
     return sorted(games, key=lambda g: g["team_a"] or "")
 

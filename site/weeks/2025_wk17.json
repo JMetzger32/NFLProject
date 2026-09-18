@@ -106,7 +106,8 @@
       "prob_b_raw": 0.7788,
       "market_a": 0.2457,
       "market_b": 0.7543,
-      "edge_a": 0.005669797173892127
+      "favorite_team": "CIN",
+      "edge_favorite": -0.005669797173892127
     },
     {
       "game_id": "2025_17_LA_ATL",
@@ -118,7 +119,8 @@
       "prob_b_raw": 0.6951,
       "market_a": 0.2292,
       "market_b": 0.7708,
-      "edge_a": 0.07016498336861202
+      "favorite_team": "LA",
+      "edge_favorite": -0.07016498336861202
     },
     {
       "game_id": "2025_17_BAL_GB",
@@ -130,7 +132,8 @@
       "prob_b_raw": 0.6193,
       "market_a": 0.4339,
       "market_b": 0.5661,
-      "edge_a": -0.06403838013838009
+      "favorite_team": "GB",
+      "edge_favorite": 0.06403838013838009
     },
     {
       "game_id": "2025_17_PHI_BUF",
@@ -142,7 +145,8 @@
       "prob_b_raw": 0.3495,
       "market_a": 0.6082,
       "market_b": 0.3918,
-      "edge_a": 0.05499745591211336
+      "favorite_team": "BUF",
+      "edge_favorite": 0.05499745591211336
     },
     {
       "game_id": "2025_17_SEA_CAR",
@@ -154,7 +158,8 @@
       "prob_b_raw": 0.6596,
       "market_a": 0.2684,
       "market_b": 0.7316,
-      "edge_a": 0.07612946437444101
+      "favorite_team": "SEA",
+      "edge_favorite": -0.07612946437444101
     },
     {
       "game_id": "2025_17_CHI_SF",
@@ -166,7 +171,8 @@
       "prob_b_raw": 0.6591,
       "market_a": 0.3491,
       "market_b": 0.6509,
-      "edge_a": 0.011431677500727655
+      "favorite_team": "SF",
+      "edge_favorite": -0.011431677500727655
     },
     {
       "game_id": "2025_17_PIT_CLE",
@@ -178,7 +184,8 @@
       "prob_b_raw": 0.6534,
       "market_a": 0.3491,
       "market_b": 0.6509,
-      "edge_a": -0.022708247422680405
+      "favorite_team": "PIT",
+      "edge_favorite": 0.022708247422680405
     },
     {
       "game_id": "2025_17_DAL_WAS",
@@ -190,7 +197,8 @@
       "prob_b_raw": 0.1843,
       "market_a": 0.8125,
       "market_b": 0.1875,
-      "edge_a": 0.0037878787878788955
+      "favorite_team": "DAL",
+      "edge_favorite": 0.0037878787878788955
     },
     {
       "game_id": "2025_17_DEN_KC",
@@ -202,7 +210,8 @@
       "prob_b_raw": 0.1649,
       "market_a": 0.8958,
       "market_b": 0.1042,
-      "edge_a": -0.06270283400809717
+      "favorite_team": "DEN",
+      "edge_favorite": -0.06270283400809717
     },
     {
       "game_id": "2025_17_DET_MIN",
@@ -214,7 +223,8 @@
       "prob_b_raw": 0.2842,
       "market_a": 0.7614,
       "market_b": 0.2386,
-      "edge_a": -0.044242356687898
+      "favorite_team": "DET",
+      "edge_favorite": -0.044242356687898
     },
     {
       "game_id": "2025_17_HOU_LAC",
@@ -226,7 +236,8 @@
       "prob_b_raw": 0.593,
       "market_a": 0.4818,
       "market_b": 0.5182,
-      "edge_a": -0.1311648707840561
+      "favorite_team": "LAC",
+      "edge_favorite": 0.1311648707840561
     },
     {
       "game_id": "2025_17_JAX_IND",
@@ -238,7 +249,8 @@
       "prob_b_raw": 0.5707,
       "market_a": 0.3293,
       "market_b": 0.6707,
-      "edge_a": 0.05691208862120889
+      "favorite_team": "JAX",
+      "edge_favorite": -0.05691208862120889
     },
     {
       "game_id": "2025_17_NYG_LV",
@@ -250,7 +262,8 @@
       "prob_b_raw": 0.5846,
       "market_a": 0.4027,
       "market_b": 0.5973,
-      "edge_a": -0.009257377049180338
+      "favorite_team": "NYG",
+      "edge_favorite": 0.009257377049180338
     },
     {
       "game_id": "2025_17_TB_MIA",
@@ -262,7 +275,8 @@
       "prob_b_raw": 0.6731,
       "market_a": 0.3068,
       "market_b": 0.6932,
-      "edge_a": 0.029916594402837948
+      "favorite_team": "TB",
+      "edge_favorite": -0.029916594402837948
     },
     {
       "game_id": "2025_17_NE_NYJ",
@@ -274,7 +288,8 @@
       "prob_b_raw": 0.1999,
       "market_a": 0.8834,
       "market_b": 0.1166,
-      "edge_a": -0.08022946041748724
+      "favorite_team": "NE",
+      "edge_favorite": -0.08022946041748724
     },
     {
       "game_id": "2025_17_NO_TEN",
@@ -286,7 +301,8 @@
       "prob_b_raw": 0.4105,
       "market_a": 0.5227,
       "market_b": 0.4773,
-      "edge_a": 0.04795160548059818
+      "favorite_team": "NO",
+      "edge_favorite": 0.04795160548059818
     }
   ]
 }

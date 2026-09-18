@@ -331,9 +331,9 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
               ' + '+esc(g.team_b)+' '+pct(g.prob_b_raw)+' = '+
               pct(g.prob_a_raw+g.prob_b_raw)+'"' : '';
           var edgeCell='—';
-          if(g.edge_a!=null){
-            var ep=(g.edge_a*100), sign=ep>=0?"+":"−", col=ep>=0?"var(--accent)":"var(--warn)";
-            edgeCell='<span style="color:'+col+'">'+esc(g.team_a)+' '+sign+Math.abs(ep).toFixed(1)+'%</span>';
+          if(g.edge_favorite!=null && g.favorite_team){
+            var ep=(g.edge_favorite*100), sign=ep>=0?"+":"−", col=ep>=0?"var(--accent)":"var(--warn)";
+            edgeCell='<span style="color:'+col+'">'+esc(g.favorite_team)+' '+sign+Math.abs(ep).toFixed(1)+'%</span>';
           }
           return '<tr><td><strong>'+esc(g.team_a)+'</strong> <span style="color:var(--muted)">vs</span> '+
             '<strong>'+esc(g.team_b)+'</strong></td>'+
