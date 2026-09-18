@@ -1,0 +1,6 @@
+# Deps for the Render Web Service (server.py) ONLY. Deliberately separate from
+# requirements.txt, which pulls in the full data/modeling stack (pandas,
+# scikit-learn, statsmodels, psycopg2, ...) that a process only serving static
+# files has no use for. Point Render's Build Command at THIS file.
+flask>=3.0
+gunicorn>=21.2

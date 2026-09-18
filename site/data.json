@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T21:20:56+00:00",
+  "generated_at": "2026-09-18T21:30:25+00:00",
   "latest": {
     "season": 2026,
     "week": 2,
@@ -230,7 +230,7 @@
       "picks": 0,
       "status": "no_qualifying_edge",
       "file": "picks_2025_wk01.json",
-      "path": "weeks/2025_wk01.json"
+      "path": "site/weeks/2025_wk01.json"
     },
     {
       "season": 2025,
@@ -239,7 +239,7 @@
       "picks": 0,
       "status": "no_qualifying_edge",
       "file": "picks_2025_wk02.json",
-      "path": "weeks/2025_wk02.json"
+      "path": "site/weeks/2025_wk02.json"
     },
     {
       "season": 2025,
@@ -248,7 +248,7 @@
       "picks": 0,
       "status": "no_qualifying_edge",
       "file": "picks_2025_wk03.json",
-      "path": "weeks/2025_wk03.json"
+      "path": "site/weeks/2025_wk03.json"
     },
     {
       "season": 2025,
@@ -257,7 +257,7 @@
       "picks": 0,
       "status": "no_qualifying_edge",
       "file": "picks_2025_wk04.json",
-      "path": "weeks/2025_wk04.json"
+      "path": "site/weeks/2025_wk04.json"
     },
     {
       "season": 2025,
@@ -266,7 +266,7 @@
       "picks": 4,
       "status": "picks_available",
       "file": "picks_2025_wk05.json",
-      "path": "weeks/2025_wk05.json"
+      "path": "site/weeks/2025_wk05.json"
     },
     {
       "season": 2025,
@@ -275,7 +275,7 @@
       "picks": 6,
       "status": "picks_available",
       "file": "picks_2025_wk06.json",
-      "path": "weeks/2025_wk06.json"
+      "path": "site/weeks/2025_wk06.json"
     },
     {
       "season": 2025,
@@ -284,7 +284,7 @@
       "picks": 4,
       "status": "picks_available",
       "file": "picks_2025_wk07.json",
-      "path": "weeks/2025_wk07.json"
+      "path": "site/weeks/2025_wk07.json"
     },
     {
       "season": 2025,
@@ -293,7 +293,7 @@
       "picks": 4,
       "status": "picks_available",
       "file": "picks_2025_wk08.json",
-      "path": "weeks/2025_wk08.json"
+      "path": "site/weeks/2025_wk08.json"
     },
     {
       "season": 2025,
@@ -302,7 +302,7 @@
       "picks": 4,
       "status": "picks_available",
       "file": "picks_2025_wk09.json",
-      "path": "weeks/2025_wk09.json"
+      "path": "site/weeks/2025_wk09.json"
     },
     {
       "season": 2025,
@@ -311,7 +311,7 @@
       "picks": 1,
       "status": "picks_available",
       "file": "picks_2025_wk10.json",
-      "path": "weeks/2025_wk10.json"
+      "path": "site/weeks/2025_wk10.json"
     },
     {
       "season": 2025,
@@ -320,7 +320,7 @@
       "picks": 2,
       "status": "picks_available",
       "file": "picks_2025_wk11.json",
-      "path": "weeks/2025_wk11.json"
+      "path": "site/weeks/2025_wk11.json"
     },
     {
       "season": 2025,
@@ -329,7 +329,7 @@
       "picks": 3,
       "status": "picks_available",
       "file": "picks_2025_wk12.json",
-      "path": "weeks/2025_wk12.json"
+      "path": "site/weeks/2025_wk12.json"
     },
     {
       "season": 2025,
@@ -338,7 +338,7 @@
       "picks": 6,
       "status": "picks_available",
       "file": "picks_2025_wk13.json",
-      "path": "weeks/2025_wk13.json"
+      "path": "site/weeks/2025_wk13.json"
     },
     {
       "season": 2025,
@@ -347,7 +347,7 @@
       "picks": 4,
       "status": "picks_available",
       "file": "picks_2025_wk14.json",
-      "path": "weeks/2025_wk14.json"
+      "path": "site/weeks/2025_wk14.json"
     },
     {
       "season": 2025,
@@ -356,7 +356,7 @@
       "picks": 6,
       "status": "picks_available",
       "file": "picks_2025_wk15.json",
-      "path": "weeks/2025_wk15.json"
+      "path": "site/weeks/2025_wk15.json"
     },
     {
       "season": 2025,
@@ -365,7 +365,7 @@
       "picks": 2,
       "status": "picks_available",
       "file": "picks_2025_wk16.json",
-      "path": "weeks/2025_wk16.json"
+      "path": "site/weeks/2025_wk16.json"
     },
     {
       "season": 2025,
@@ -374,7 +374,7 @@
       "picks": 5,
       "status": "picks_available",
       "file": "picks_2025_wk17.json",
-      "path": "weeks/2025_wk17.json"
+      "path": "site/weeks/2025_wk17.json"
     },
     {
       "season": 2025,
@@ -383,7 +383,7 @@
       "picks": 6,
       "status": "picks_available",
       "file": "picks_2025_wk18.json",
-      "path": "weeks/2025_wk18.json"
+      "path": "site/weeks/2025_wk18.json"
     },
     {
       "season": 2026,
@@ -392,7 +392,7 @@
       "picks": 0,
       "status": "no_qualifying_edge",
       "file": "picks_2026_wk02.json",
-      "path": "weeks/2026_wk02.json"
+      "path": "site/weeks/2026_wk02.json"
     },
     {
       "season": 2026,
@@ -401,7 +401,7 @@
       "picks": 0,
       "status": "no_qualifying_edge",
       "file": "picks_2026_wk03.json",
-      "path": "weeks/2026_wk03.json"
+      "path": "site/weeks/2026_wk03.json"
     }
   ],
   "metrics": {

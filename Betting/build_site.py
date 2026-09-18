@@ -185,7 +185,10 @@ def write_week_files(weeks: list[dict]) -> list[dict]:
             continue
         wid = week_id(w["season"], w["week"])
         (weeks_dir / f"{wid}.json").write_text(json.dumps(payload, indent=2))
-        out.append({**w, "path": f"weeks/{wid}.json"})
+        # Prefixed with "site/": the frontend fetches this path directly (no other
+        # prefixing), resolved relative to index.html at the repo root — so it must
+        # be the real location, not a path relative to site/data.json's own folder.
+        out.append({**w, "path": f"site/weeks/{wid}.json"})
     return out
 
 
