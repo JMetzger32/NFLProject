@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T20:54:06+00:00",
+  "generated_at": "2026-09-18T21:04:19+00:00",
   "latest": {
     "season": 2026,
     "week": 3,
@@ -15,260 +15,116 @@
     "picks": [],
     "games": [
       {
-        "team": "ARI",
-        "opponent": "SF",
-        "model_prob": 0.2624,
-        "market_prob_devig": 0.1919,
-        "edge": 0.0706,
-        "reason": "insufficient history (1 games, need 4)"
+        "game_id": "2026_03_ARI_SF",
+        "team_a": "ARI",
+        "prob_a": 0.2624,
+        "team_b": "SF",
+        "prob_b": 0.7927
       },
       {
-        "team": "SF",
-        "opponent": "ARI",
-        "model_prob": 0.7927,
-        "market_prob_devig": 0.8081,
-        "edge": -0.0154,
-        "reason": "insufficient history (1 games, need 4)"
+        "game_id": "2026_03_ATL_GB",
+        "team_a": "ATL",
+        "prob_a": 0.3174,
+        "team_b": "GB",
+        "prob_b": 0.7294
       },
       {
-        "team": "ATL",
-        "opponent": "GB",
-        "model_prob": 0.3174,
-        "market_prob_devig": 0.2648,
-        "edge": 0.0526,
-        "reason": "insufficient history (1 games, need 4)"
+        "game_id": "2026_03_BAL_DAL",
+        "team_a": "BAL",
+        "prob_a": 0.6081,
+        "team_b": "DAL",
+        "prob_b": 0.4516
       },
       {
-        "team": "GB",
-        "opponent": "ATL",
-        "model_prob": 0.7294,
-        "market_prob_devig": 0.7352,
-        "edge": -0.0058,
-        "reason": "insufficient history (1 games, need 4)"
+        "game_id": "2026_03_LAC_BUF",
+        "team_a": "BUF",
+        "prob_a": 0.5221,
+        "team_b": "LAC",
+        "prob_b": 0.4658
       },
       {
-        "team": "BAL",
-        "opponent": "DAL",
-        "model_prob": 0.6081,
-        "market_prob_devig": 0.5865,
-        "edge": 0.0216,
-        "reason": "insufficient history (1 games, need 4)"
+        "game_id": "2026_03_CAR_CLE",
+        "team_a": "CAR",
+        "prob_a": 0.588,
+        "team_b": "CLE",
+        "prob_b": 0.4386
       },
       {
-        "team": "DAL",
-        "opponent": "BAL",
-        "model_prob": 0.4516,
-        "market_prob_devig": 0.4135,
-        "edge": 0.0381,
-        "reason": "insufficient history (1 games, need 4)"
+        "game_id": "2026_03_PHI_CHI",
+        "team_a": "CHI",
+        "prob_a": 0.5849,
+        "team_b": "PHI",
+        "prob_b": 0.437
       },
       {
-        "team": "CAR",
-        "opponent": "CLE",
-        "model_prob": 0.588,
-        "market_prob_devig": 0.5661,
-        "edge": 0.0219,
-        "reason": "insufficient history (1 games, need 4)"
+        "game_id": "2026_03_CIN_PIT",
+        "team_a": "CIN",
+        "prob_a": 0.6036,
+        "team_b": "PIT",
+        "prob_b": 0.4215
       },
       {
-        "team": "CLE",
-        "opponent": "CAR",
-        "model_prob": 0.4386,
-        "market_prob_devig": 0.4339,
-        "edge": 0.0047,
-        "reason": "insufficient history (1 games, need 4)"
+        "game_id": "2026_03_LA_DEN",
+        "team_a": "DEN",
+        "prob_a": 0.4241,
+        "team_b": "LA",
+        "prob_b": 0.5923
       },
       {
-        "team": "CIN",
-        "opponent": "PIT",
-        "model_prob": 0.6036,
-        "market_prob_devig": 0.5536,
-        "edge": 0.05,
-        "reason": "insufficient history (1 games, need 4)"
+        "game_id": "2026_03_NYJ_DET",
+        "team_a": "DET",
+        "prob_a": 0.5017,
+        "team_b": "NYJ",
+        "prob_b": 0.488
       },
       {
-        "team": "PIT",
-        "opponent": "CIN",
-        "model_prob": 0.4215,
-        "market_prob_devig": 0.4464,
-        "edge": -0.025,
-        "reason": "insufficient history (1 games, need 4)"
+        "game_id": "2026_03_HOU_IND",
+        "team_a": "HOU",
+        "prob_a": 0.5914,
+        "team_b": "IND",
+        "prob_b": 0.3896
       },
       {
-        "team": "HOU",
-        "opponent": "IND",
-        "model_prob": 0.5914,
-        "market_prob_devig": 0.5536,
-        "edge": 0.0378,
-        "reason": "insufficient history (1 games, need 4)"
+        "game_id": "2026_03_NE_JAX",
+        "team_a": "JAX",
+        "prob_a": 0.6334,
+        "team_b": "NE",
+        "prob_b": 0.416
       },
       {
-        "team": "IND",
-        "opponent": "HOU",
-        "model_prob": 0.3896,
-        "market_prob_devig": 0.4464,
-        "edge": -0.0568,
-        "reason": "insufficient history (1 games, need 4)"
+        "game_id": "2026_03_KC_MIA",
+        "team_a": "KC",
+        "prob_a": 0.6853,
+        "team_b": "MIA",
+        "prob_b": 0.2963
       },
       {
-        "team": "KC",
-        "opponent": "MIA",
-        "model_prob": 0.6853,
-        "market_prob_devig": 0.7988,
-        "edge": -0.1135,
-        "reason": "insufficient history (1 games, need 4)"
+        "game_id": "2026_03_LV_NO",
+        "team_a": "LV",
+        "prob_a": 0.3778,
+        "team_b": "NO",
+        "prob_b": 0.5818
       },
       {
-        "team": "MIA",
-        "opponent": "KC",
-        "model_prob": 0.2963,
-        "market_prob_devig": 0.2012,
-        "edge": 0.0951,
-        "reason": "insufficient history (1 games, need 4)"
+        "game_id": "2026_03_MIN_TB",
+        "team_a": "MIN",
+        "prob_a": 0.4518,
+        "team_b": "TB",
+        "prob_b": 0.5476
       },
       {
-        "team": "BUF",
-        "opponent": "LAC",
-        "model_prob": 0.5221,
-        "market_prob_devig": 0.5,
-        "edge": 0.0221,
-        "reason": "no market odds available"
+        "game_id": "2026_03_TEN_NYG",
+        "team_a": "NYG",
+        "prob_a": 0.712,
+        "team_b": "TEN",
+        "prob_b": 0.2702
       },
       {
-        "team": "LAC",
-        "opponent": "BUF",
-        "model_prob": 0.4658,
-        "market_prob_devig": 0.5,
-        "edge": -0.0342,
-        "reason": "no market odds available"
-      },
-      {
-        "team": "DEN",
-        "opponent": "LA",
-        "model_prob": 0.4241,
-        "market_prob_devig": 0.4464,
-        "edge": -0.0223,
-        "reason": "insufficient history (1 games, need 4)"
-      },
-      {
-        "team": "LA",
-        "opponent": "DEN",
-        "model_prob": 0.5923,
-        "market_prob_devig": 0.5536,
-        "edge": 0.0387,
-        "reason": "insufficient history (1 games, need 4)"
-      },
-      {
-        "team": "LV",
-        "opponent": "NO",
-        "model_prob": 0.3778,
-        "market_prob_devig": 0.4027,
-        "edge": -0.0249,
-        "reason": "insufficient history (1 games, need 4)"
-      },
-      {
-        "team": "NO",
-        "opponent": "LV",
-        "model_prob": 0.5818,
-        "market_prob_devig": 0.5973,
-        "edge": -0.0155,
-        "reason": "insufficient history (1 games, need 4)"
-      },
-      {
-        "team": "MIN",
-        "opponent": "TB",
-        "model_prob": 0.4518,
-        "market_prob_devig": 0.4661,
-        "edge": -0.0144,
-        "reason": "insufficient history (1 games, need 4)"
-      },
-      {
-        "team": "TB",
-        "opponent": "MIN",
-        "model_prob": 0.5476,
-        "market_prob_devig": 0.5339,
-        "edge": 0.0137,
-        "reason": "insufficient history (1 games, need 4)"
-      },
-      {
-        "team": "JAX",
-        "opponent": "NE",
-        "model_prob": 0.6334,
-        "market_prob_devig": 0.5536,
-        "edge": 0.0798,
-        "reason": "insufficient history (1 games, need 4)"
-      },
-      {
-        "team": "NE",
-        "opponent": "JAX",
-        "model_prob": 0.416,
-        "market_prob_devig": 0.4464,
-        "edge": -0.0305,
-        "reason": "insufficient history (1 games, need 4)"
-      },
-      {
-        "team": "DET",
-        "opponent": "NYJ",
-        "model_prob": 0.5017,
-        "market_prob_devig": 0.5,
-        "edge": 0.0017,
-        "reason": "no market odds available"
-      },
-      {
-        "team": "NYJ",
-        "opponent": "DET",
-        "model_prob": 0.488,
-        "market_prob_devig": 0.5,
-        "edge": -0.012,
-        "reason": "no market odds available"
-      },
-      {
-        "team": "CHI",
-        "opponent": "PHI",
-        "model_prob": 0.5849,
-        "market_prob_devig": 0.5182,
-        "edge": 0.0668,
-        "reason": "insufficient history (1 games, need 4)"
-      },
-      {
-        "team": "PHI",
-        "opponent": "CHI",
-        "model_prob": 0.437,
-        "market_prob_devig": 0.4818,
-        "edge": -0.0448,
-        "reason": "insufficient history (1 games, need 4)"
-      },
-      {
-        "team": "SEA",
-        "opponent": "WAS",
-        "model_prob": 0.6503,
-        "market_prob_devig": 0.5536,
-        "edge": 0.0967,
-        "reason": "insufficient history (1 games, need 4)"
-      },
-      {
-        "team": "WAS",
-        "opponent": "SEA",
-        "model_prob": 0.3877,
-        "market_prob_devig": 0.4464,
-        "edge": -0.0587,
-        "reason": "insufficient history (1 games, need 4)"
-      },
-      {
-        "team": "NYG",
-        "opponent": "TEN",
-        "model_prob": 0.712,
-        "market_prob_devig": 0.6932,
-        "edge": 0.0188,
-        "reason": "insufficient history (1 games, need 4)"
-      },
-      {
-        "team": "TEN",
-        "opponent": "NYG",
-        "model_prob": 0.2702,
-        "market_prob_devig": 0.3068,
-        "edge": -0.0366,
-        "reason": "insufficient history (1 games, need 4)"
+        "game_id": "2026_03_SEA_WAS",
+        "team_a": "SEA",
+        "prob_a": 0.6503,
+        "team_b": "WAS",
+        "prob_b": 0.3877
       }
     ]
   },

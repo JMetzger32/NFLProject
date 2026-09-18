@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NFL Market Edge</title>
-<meta name="description" content="An NFL prediction model tested honestly against the closing line — including the finding that it doesn't beat it.">
+<meta name="description" content="Weekly NFL game predictions from a model trained on five seasons of play-by-play data.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
@@ -174,7 +174,7 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
     <div class="brand"><span class="dot"></span> NFL Market Edge</div>
     <nav class="navlinks">
       <a href="#week">This week</a>
-      <a href="#results">Results</a>
+      <a href="#archive">Archive</a>
       <a href="#method">Method</a>
       <a href="https://github.com/JMetzger32/NFLProject">Source</a>
       <button id="themeBtn" type="button">Theme</button>
@@ -186,75 +186,27 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
 
   <div class="hero">
     <p class="eyebrow">2021–2026 · nflverse · PostgreSQL</p>
-    <h1>A prediction model, measured against the line that already knows.</h1>
+    <h1>Weekly NFL predictions, built from five seasons of play-by-play.</h1>
     <p class="lede prose">
-      Five seasons of NFL play-by-play, a logistic-regression / gradient-boosting /
-      random-forest ensemble, and a betting engine that de-vigs the market before it
-      claims an edge. Everything is benchmarked against one number: the closing spread.
+      A logistic-regression / gradient-boosting / random-forest ensemble trained on
+      rolling team and QB form, injuries, and situational context — bagged over
+      block-bootstrap resamples so every prediction carries an uncertainty interval,
+      not just a point estimate.
     </p>
-    <div class="thesis prose">
-      <strong>It does not beat the closing line.</strong> No configuration cleared the
-      benchmark, and the edge filter built on top of it lost money on the 2025 holdout.
-      That finding is the result — this page reports it rather than burying it under picks.
-    </div>
-    <div class="figures" id="figures"></div>
   </div>
 
   <section id="week">
     <div class="sec-head">
       <p class="eyebrow">Current slate</p>
-      <h2>This week</h2>
+      <h2>This week's games</h2>
       <p class="prose" style="color:var(--ink-2)">
-        A game only becomes a pick when the model's bootstrap confidence interval sits
-        entirely above the de-vigged market probability. Most weeks, nothing qualifies.
+        Each matchup with the model's predicted win probability for both teams.
       </p>
     </div>
     <div class="panel" id="weekPanel">
       <div class="panel-body"><p class="mono" style="color:var(--muted)">Loading…</p></div>
     </div>
     <p class="note" id="weekNote"></p>
-  </section>
-
-  <section id="results">
-    <div class="sec-head">
-      <p class="eyebrow">2025 holdout · 542 team-games</p>
-      <h2>Model versus market</h2>
-      <p class="prose" style="color:var(--ink-2)">
-        AUC measures how well each ranks winners above losers. The market wins, and it
-        also wins every probability-quality metric — it is better calibrated than the model.
-      </p>
-    </div>
-    <div class="scale" id="scale"></div>
-    <div class="ticks" aria-hidden="true">
-      <span></span><span class="tickbar"><span>0.50 coin flip</span><span>0.60</span><span>0.70</span><span>0.75</span></span><span></span>
-    </div>
-    <div class="tablewrap" style="margin-top:26px">
-      <table id="metricsTable">
-        <thead><tr><th>Model</th><th>AUC</th><th>Accuracy</th><th>Brier</th><th>ECE</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-    <p class="note">
-      Lower Brier and ECE are better. ECE is calibration error — the market's is roughly
-      half the model's.
-    </p>
-  </section>
-
-  <section id="edge">
-    <div class="sec-head">
-      <p class="eyebrow">The honest part</p>
-      <h2>What happened when it did bet</h2>
-    </div>
-    <div class="prose" style="display:flex; flex-direction:column; gap:14px; color:var(--ink-2)">
-      <p id="edgeText">…</p>
-      <p>
-        The cause is diagnosed, not guessed: the model's probabilities are
-        <em>flatter</em> than the market's. It says 22% where reality is 15%, and 78%
-        where reality is 87%. A one-sided edge filter reads that flatness as opportunity
-        on every heavy underdog. Calibration does not fix it — isotonic recalibration
-        flips the picks to favourites and loses more.
-      </p>
-    </div>
   </section>
 
   <section id="method">
@@ -303,7 +255,7 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
 
 <footer>
   <div class="wrap foot">
-    <span>Research project. Not betting advice — the model loses money.</span>
+    <span>Research project. Not betting advice.</span>
     <span class="mono" id="stamp"></span>
   </div>
 </footer>
@@ -334,74 +286,26 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
     });
 
   function render(d){
-    var m=d.metrics||{}, et=m.edge_test||{}, L=d.latest;
+    var L=d.latest;
 
-    // Verdict figures — the three numbers the project turns on.
-    var figs=[
-      {k:(m.benchmark_auc!=null?m.benchmark_auc.toFixed(4):"—"),
-       l:"Closing-spread AUC — the benchmark every model is measured against"},
-      {k:(m.production_auc!=null?m.production_auc.toFixed(4):"—"),
-       l:"Best production model, 2025 holdout. Below the market.", neg:true},
-      {k:(et.picks!=null? et.picks+" picks" :"—"),
-       l:(et.accuracy!=null? pct(et.accuracy)+" correct across the 2025 season" : ""), neg:true}
-    ];
-    document.getElementById("figures").innerHTML = figs.map(function(f){
-      return '<div class="fig'+(f.neg?" neg":"")+'"><div class="k mono">'+esc(f.k)+
-             '</div><div class="l">'+esc(f.l)+'</div></div>';
-    }).join("");
-
-    // AUC scale: 0.50 (coin flip) to 0.75.
-    var lo=0.50, hi=0.75, rows=(m.holdout||[]).filter(function(r){return r.auc!=null;});
-    document.getElementById("scale").innerHTML = rows.map(function(r){
-      var isMk=/^MARKET/.test(r.model);
-      var w=Math.max(0,Math.min(1,(r.auc-lo)/(hi-lo)))*100;
-      var nm=isMk?"Closing spread":r.model;
-      return '<div class="row"><span class="nm">'+esc(nm)+'</span>'+
-        '<span class="track"><span class="bar'+(isMk?" mk":"")+'" style="width:'+w.toFixed(1)+'%"></span></span>'+
-        '<span class="v mono">'+r.auc.toFixed(4)+'</span></div>';
-    }).join("");
-
-    // Metrics table
-    document.querySelector("#metricsTable tbody").innerHTML = rows.map(function(r){
-      var isMk=/^MARKET/.test(r.model);
-      return '<tr'+(isMk?' class="mk"':'')+'><td>'+esc(isMk?"Closing spread (benchmark)":r.model)+'</td>'+
-        '<td class="mono">'+r.auc.toFixed(4)+'</td>'+
-        '<td class="mono">'+r.accuracy.toFixed(4)+'</td>'+
-        '<td class="mono">'+r.brier.toFixed(4)+'</td>'+
-        '<td class="mono">'+r.ece.toFixed(4)+'</td></tr>';
-    }).join("");
-
-    // Edge narrative
-    if(et.picks!=null){
-      document.getElementById("edgeText").innerHTML =
-        'Across the 2025 season the filter qualified <strong class="mono">'+et.picks+
-        '</strong> picks out of '+et.team_games+' team-games. They hit <strong class="mono">'+
-        pct(et.accuracy)+'</strong> — on a mean claimed edge of <span class="mono">+'+
-        (et.mean_edge*100).toFixed(1)+'%</span>. Betting them at a flat $10 stake lost money.';
-    }
-
-    // This week
+    // This week — every game, both teams' predicted win probability.
     if(L){
-      var has=L.qualifying_picks>0;
       var head='<div class="panel-head"><div><strong>'+L.season+' · Week '+L.week+
-        '</strong> <span style="color:var(--muted)"> — '+L.games_evaluated+' games evaluated</span></div>'+
-        '<span class="pill '+(has?"has":"none")+'">'+(has?L.qualifying_picks+" qualifying":"No qualifying edge")+'</span></div>';
+        '</strong></div><span class="pill none">'+(L.games?L.games.length:0)+' games</span></div>';
       var body;
-      if(has){
+      if(L.games && L.games.length){
         body='<div class="panel-body"><div class="tablewrap"><table><thead><tr>'+
-          '<th>Pick</th><th>Model</th><th>Market</th><th>Edge</th><th>Odds</th><th>Stake</th></tr></thead><tbody>'+
-          L.picks.map(function(p){
-            return '<tr><td><strong>'+esc(p.team)+'</strong> <span style="color:var(--muted)">vs '+esc(p.opponent)+'</span></td>'+
-              '<td class="mono">'+pct(p.model_prob)+'</td><td class="mono">'+pct(p.market_prob_devig)+'</td>'+
-              '<td class="mono" style="color:var(--accent)">+'+(p.edge*100).toFixed(1)+'%</td>'+
-              '<td class="mono">'+(p.moneyline>0?"+":"")+p.moneyline+'</td>'+
-              '<td class="mono">$'+p.stake.toFixed(0)+'</td></tr>';
+          '<th>Matchup</th><th style="text-align:left">Win probability</th></tr></thead><tbody>'+
+          L.games.map(function(g){
+            var pa=g.prob_a!=null?pct(g.prob_a):"—", pb=g.prob_b!=null?pct(g.prob_b):"—";
+            return '<tr><td><strong>'+esc(g.team_a)+'</strong> <span style="color:var(--muted)">vs</span> '+
+              '<strong>'+esc(g.team_b)+'</strong></td>'+
+              '<td class="mono" style="text-align:left">'+esc(g.team_a)+' '+pa+
+              ' &nbsp;·&nbsp; '+esc(g.team_b)+' '+pb+'</td></tr>';
           }).join("")+'</tbody></table></div></div>';
       } else {
         body='<div class="panel-body"><div class="empty">'+
-          '<span class="big">No game cleared the filter.</span>'+
-          '<span class="why">'+esc(L.notes||"No model interval sat entirely above the de-vigged market price.")+'</span>'+
-          '<span class="why">This is the filter working as designed, not an error.</span>'+
+          '<span class="big">No games loaded for this week yet.</span>'+
           '</div></div>';
       }
       document.getElementById("weekPanel").innerHTML=head+body;
@@ -411,15 +315,12 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
         parts.length ? "Feature basis: "+parts.join(", ")+"." : "";
     }
 
-    // Archive
-    document.getElementById("weeks").innerHTML=(d.weeks||[]).map(function(w){
-      return '<span class="wk'+(w.picks>0?" has":"")+'">'+w.season+' W'+w.week+
-             (w.picks>0?" · "+w.picks:"")+'</span>';
+    // Archive — every week the pipeline has evaluated, most recent first.
+    document.getElementById("weeks").innerHTML=(d.weeks||[]).slice().reverse().map(function(w){
+      return '<span class="wk">'+w.season+' W'+w.week+'</span>';
     }).join("");
-    var tot=(d.weeks||[]).reduce(function(a,w){return a+w.picks;},0);
     document.getElementById("archiveNote").textContent =
-      (d.weeks||[]).length+" weeks evaluated, "+tot+" picks qualified in total. "+
-      "Highlighted weeks produced at least one.";
+      (d.weeks||[]).length+" weeks evaluated so far.";
 
     document.getElementById("stamp").textContent="Updated "+(d.generated_at||"").replace("T"," ").replace("+00:00","Z");
   }

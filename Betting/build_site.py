@@ -46,6 +46,29 @@ def read_weeks() -> list[dict]:
     return sorted(weeks, key=lambda w: (w["season"], w["week"]))
 
 
+def _pair_games(all_games: list[dict]) -> list[dict]:
+    """Each team-game is its own row (both sides of a matchup appear separately).
+    Pair them into one row per real game so a public list doesn't show the same
+    matchup twice."""
+    by_id: dict[str, list[dict]] = {}
+    for g in all_games:
+        gid = g.get("game_id")
+        if gid:
+            by_id.setdefault(gid, []).append(g)
+
+    games = []
+    for gid, rows in by_id.items():
+        rows = sorted(rows, key=lambda r: r.get("team") or "")
+        a = rows[0]
+        b = rows[1] if len(rows) > 1 else {"team": a.get("opponent")}
+        games.append({
+            "game_id": gid,
+            "team_a": a.get("team"), "prob_a": a.get("model_prob"),
+            "team_b": b.get("team"), "prob_b": b.get("model_prob"),
+        })
+    return sorted(games, key=lambda g: g["team_a"] or "")
+
+
 def latest_week() -> dict | None:
     weeks = read_weeks()
     if not weeks:
@@ -61,12 +84,8 @@ def latest_week() -> dict | None:
         "insufficient_history": p.get("insufficient_history", False),
         "notes": p.get("notes", ""),
         "history_source_counts": p.get("history_source_counts", {}),
-        "picks": p.get("picks", []),
-        "games": [
-            {k: g.get(k) for k in
-             ("team", "opponent", "model_prob", "market_prob_devig", "edge", "reason")}
-            for g in p.get("all_games", [])
-        ],
+        "picks": p.get("picks", []),          # kept for later — not rendered yet
+        "games": _pair_games(p.get("all_games", [])),
     }
 
 
