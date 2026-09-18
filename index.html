@@ -322,7 +322,7 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
     if(L.games && L.games.length){
       body='<div class="panel-body"><div class="tablewrap"><table><thead><tr>'+
         '<th>Matchup</th><th style="text-align:left">Win probability</th>'+
-        '<th style="text-align:left">Market</th></tr></thead><tbody>'+
+        '<th style="text-align:left">Market</th><th style="text-align:left">Edge</th></tr></thead><tbody>'+
         L.games.map(function(g){
           var pa=pct(g.prob_a), pb=pct(g.prob_b);
           var ma=pct(g.market_a), mb=pct(g.market_b);
@@ -330,12 +330,18 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
             ? ' title="Before normalizing: '+esc(g.team_a)+' '+pct(g.prob_a_raw)+
               ' + '+esc(g.team_b)+' '+pct(g.prob_b_raw)+' = '+
               pct(g.prob_a_raw+g.prob_b_raw)+'"' : '';
+          var edgeCell='—';
+          if(g.edge_a!=null){
+            var ep=(g.edge_a*100), sign=ep>=0?"+":"−", col=ep>=0?"var(--accent)":"var(--warn)";
+            edgeCell='<span style="color:'+col+'">'+esc(g.team_a)+' '+sign+Math.abs(ep).toFixed(1)+'%</span>';
+          }
           return '<tr><td><strong>'+esc(g.team_a)+'</strong> <span style="color:var(--muted)">vs</span> '+
             '<strong>'+esc(g.team_b)+'</strong></td>'+
             '<td class="mono" style="text-align:left"'+raw+'>'+esc(g.team_a)+' '+pa+
             ' &nbsp;·&nbsp; '+esc(g.team_b)+' '+pb+'</td>'+
             '<td class="mono" style="text-align:left; color:var(--ink-2)">'+esc(g.team_a)+' '+ma+
-            ' &nbsp;·&nbsp; '+esc(g.team_b)+' '+mb+'</td></tr>';
+            ' &nbsp;·&nbsp; '+esc(g.team_b)+' '+mb+'</td>'+
+            '<td class="mono" style="text-align:left">'+edgeCell+'</td></tr>';
         }).join("")+'</tbody></table></div></div>';
     } else {
       body='<div class="panel-body"><div class="empty">'+
