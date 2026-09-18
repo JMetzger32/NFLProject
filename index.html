@@ -71,6 +71,10 @@ header{border-bottom:1px solid var(--line); background:var(--surface)}
 #themeBtn{background:none; border:1px solid var(--line); color:var(--ink-2);
   border-radius:999px; padding:3px 11px; font:inherit; font-size:.78rem; cursor:pointer}
 #themeBtn:hover{border-color:var(--accent); color:var(--accent)}
+.tabbtn{background:none; border:none; color:var(--ink-2); font:inherit; font-size:.87rem;
+  cursor:pointer; padding:0}
+.tabbtn:hover{color:var(--accent)}
+.tabbtn.active{color:var(--accent); font-weight:600}
 
 /* hero */
 .hero{padding-block:clamp(40px,7vw,68px) 30px}
@@ -153,12 +157,21 @@ tr.mk td{color:var(--ink-2); font-weight:600; background:var(--surface-2)}
 .step h3{margin-bottom:3px}
 .step p{font-size:.89rem; color:var(--ink-2)}
 
-/* week index */
+/* week index — buttons, not links: a week with no page just isn't rendered */
 .weeks{display:flex; flex-wrap:wrap; gap:6px; margin-top:18px}
-.wk{font-size:.74rem; padding:5px 9px; border-radius:6px; border:1px solid var(--line);
-  background:var(--surface); color:var(--muted)}
-.wk.has{border-color:var(--accent); color:var(--accent); background:var(--accent-soft);
+.wk{font: inherit; font-size:.74rem; padding:5px 9px; border-radius:6px;
+  border:1px solid var(--line); background:var(--surface); color:var(--muted);
+  cursor:pointer}
+.wk:hover{border-color:var(--accent); color:var(--accent)}
+.wk.current{border-color:var(--accent); color:var(--accent); background:var(--accent-soft);
   font-weight:600}
+.wk.viewing{outline:2px solid var(--accent); outline-offset:1px}
+
+/* accuracy tab */
+.stat-row{display:flex; flex-wrap:wrap; gap:24px; padding:20px 18px}
+.stat{display:flex; flex-direction:column; gap:3px}
+.stat .k{font-size:1.6rem; font-weight:700; letter-spacing:-.02em}
+.stat .l{font-size:.76rem; color:var(--muted)}
 
 .note{font-size:.84rem; color:var(--muted); margin-top:16px}
 footer{border-top:1px solid var(--line); background:var(--surface); margin-top:24px}
@@ -173,8 +186,8 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
   <div class="wrap head-inner">
     <div class="brand"><span class="dot"></span> NFL Market Edge</div>
     <nav class="navlinks">
-      <a href="#week">This week</a>
-      <a href="#archive">Archive</a>
+      <button class="tabbtn active" data-tab="week" type="button">This week</button>
+      <button class="tabbtn" data-tab="accuracy" type="button">Accuracy</button>
       <a href="#method">Method</a>
       <a href="https://github.com/JMetzger32/NFLProject">Source</a>
       <button id="themeBtn" type="button">Theme</button>
@@ -195,18 +208,36 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
     </p>
   </div>
 
-  <section id="week">
+  <section id="week" class="tabpanel">
     <div class="sec-head">
-      <p class="eyebrow">Current slate</p>
-      <h2>This week's games</h2>
+      <p class="eyebrow" id="weekEyebrow">Current slate</p>
+      <h2 id="weekHeading">This week's games</h2>
       <p class="prose" style="color:var(--ink-2)">
-        Each matchup with the model's predicted win probability for both teams.
+        Each matchup with the model's predicted win probability and the
+        de-vigged market probability, for both teams.
       </p>
     </div>
     <div class="panel" id="weekPanel">
       <div class="panel-body"><p class="mono" style="color:var(--muted)">Loading…</p></div>
     </div>
     <p class="note" id="weekNote"></p>
+
+    <div class="sec-head" style="margin-top:34px">
+      <p class="eyebrow">Browse</p>
+      <h2>Other weeks</h2>
+    </div>
+    <div class="weeks" id="weeks"></div>
+    <p class="note" id="archiveNote"></p>
+  </section>
+
+  <section id="accuracy" class="tabpanel" hidden>
+    <div class="sec-head">
+      <p class="eyebrow">Tracked as weeks are graded</p>
+      <h2>Accuracy</h2>
+    </div>
+    <div class="panel" id="accuracyPanel">
+      <div class="panel-body"><p class="mono" style="color:var(--muted)">Loading…</p></div>
+    </div>
   </section>
 
   <section id="method">
@@ -242,15 +273,6 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
     </p>
   </section>
 
-  <section id="archive">
-    <div class="sec-head">
-      <p class="eyebrow">Archive</p>
-      <h2>Every week evaluated</h2>
-    </div>
-    <div class="weeks" id="weeks"></div>
-    <p class="note" id="archiveNote"></p>
-  </section>
-
 </main>
 
 <footer>
@@ -272,63 +294,134 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
     try{ localStorage.setItem(KEY,next); }catch(e){}
   });
 
-  var pct=function(x){return (x*100).toFixed(1)+"%";};
+  var pct=function(x){return x==null?"—":(x*100).toFixed(1)+"%";};
   var esc=function(s){var d=document.createElement("div"); d.textContent=s==null?"":s; return d.innerHTML;};
+
+  // ---- tabs ----
+  document.querySelectorAll(".tabbtn").forEach(function(btn){
+    btn.addEventListener("click",function(){ showTab(btn.getAttribute("data-tab")); });
+  });
+  function showTab(name){
+    document.querySelectorAll(".tabpanel").forEach(function(p){
+      p.hidden = p.id!==name;
+    });
+    document.querySelectorAll(".tabbtn").forEach(function(b){
+      b.classList.toggle("active", b.getAttribute("data-tab")===name);
+    });
+  }
+
+  // ---- "this week" panel, shared by the initial load and by clicking a week chip ----
+  function renderWeekPanel(L, isCurrent){
+    var eyebrow=document.getElementById("weekEyebrow"), heading=document.getElementById("weekHeading");
+    if(isCurrent){ eyebrow.textContent="Current slate"; heading.textContent="This week's games"; }
+    else { eyebrow.textContent=L.season+" · Week "+L.week; heading.textContent="Week "+L.week+" games"; }
+
+    var head='<div class="panel-head"><div><strong>'+L.season+' · Week '+L.week+
+      '</strong></div><span class="pill none">'+(L.games?L.games.length:0)+' games</span></div>';
+    var body;
+    if(L.games && L.games.length){
+      body='<div class="panel-body"><div class="tablewrap"><table><thead><tr>'+
+        '<th>Matchup</th><th style="text-align:left">Win probability</th>'+
+        '<th style="text-align:left">Market</th></tr></thead><tbody>'+
+        L.games.map(function(g){
+          var pa=pct(g.prob_a), pb=pct(g.prob_b);
+          var ma=pct(g.market_a), mb=pct(g.market_b);
+          var raw=(g.prob_a_raw!=null&&g.prob_b_raw!=null)
+            ? ' title="Before normalizing: '+esc(g.team_a)+' '+pct(g.prob_a_raw)+
+              ' + '+esc(g.team_b)+' '+pct(g.prob_b_raw)+' = '+
+              pct(g.prob_a_raw+g.prob_b_raw)+'"' : '';
+          return '<tr><td><strong>'+esc(g.team_a)+'</strong> <span style="color:var(--muted)">vs</span> '+
+            '<strong>'+esc(g.team_b)+'</strong></td>'+
+            '<td class="mono" style="text-align:left"'+raw+'>'+esc(g.team_a)+' '+pa+
+            ' &nbsp;·&nbsp; '+esc(g.team_b)+' '+pb+'</td>'+
+            '<td class="mono" style="text-align:left; color:var(--ink-2)">'+esc(g.team_a)+' '+ma+
+            ' &nbsp;·&nbsp; '+esc(g.team_b)+' '+mb+'</td></tr>';
+        }).join("")+'</tbody></table></div></div>';
+    } else {
+      body='<div class="panel-body"><div class="empty">'+
+        '<span class="big">Predictions for this week aren\'t posted yet.</span>'+
+        (L.notes?'<span class="why">'+esc(L.notes)+'</span>':'')+
+        '</div></div>';
+    }
+    document.getElementById("weekPanel").innerHTML=head+body;
+    var hs=L.history_source_counts||{}, parts=Object.keys(hs).map(function(k){
+      return hs[k]+" "+k.replace(/_/g," ");});
+    document.getElementById("weekNote").textContent =
+      parts.length ? "Feature basis: "+parts.join(", ")+"." : "";
+  }
+
+  // ---- accuracy tab ----
+  function renderAccuracy(a){
+    var el=document.getElementById("accuracyPanel");
+    if(!a || !a.graded){
+      el.innerHTML='<div class="panel-body"><div class="empty">'+
+        '<span class="big">No graded predictions yet.</span>'+
+        '<span class="why">Accuracy is tracked once a week finishes and is graded — '+
+        'nothing has completed and been graded so far. This will fill in as weeks play out.</span>'+
+        '</div></div>';
+      return;
+    }
+    var rows=[
+      {k:a.record, l:"Overall record (all graded predictions)"},
+      {k:pct(a.accuracy), l:"Accuracy"},
+      {k:a.picks_record||"—", l:"Qualifying picks record"},
+    ];
+    var stats='<div class="stat-row">'+rows.map(function(r){
+      return '<div class="stat"><div class="k mono">'+esc(r.k)+'</div><div class="l">'+esc(r.l)+'</div></div>';
+    }).join("")+'</div>';
+    var noteHtml = a.sample_note
+      ? '<p class="note" style="padding:0 18px 14px">'+esc(a.sample_note)+'</p>' : '';
+    var weekRows=(a.by_week||[]).slice().reverse().map(function(w){
+      return '<tr><td>'+w.season+' W'+w.week+'</td><td class="mono">'+w.correct+'/'+w.games+'</td>'+
+        '<td class="mono">'+pct(w.accuracy)+'</td></tr>';
+    }).join("");
+    var table = weekRows
+      ? '<div class="tablewrap" style="margin:0 18px 18px"><table><thead><tr>'+
+        '<th>Week</th><th>Correct</th><th>Accuracy</th></tr></thead><tbody>'+weekRows+'</tbody></table></div>'
+      : '';
+    el.innerHTML='<div class="panel-body" style="padding:0">'+stats+noteHtml+table+'</div>';
+  }
+
+  // ---- week chips: each is a real page (site/weeks/*.json) or it isn't rendered ----
+  function wireWeekChips(d){
+    var cw = d.latest ? {season:d.latest.season, week:d.latest.week} : null;
+    var list=(d.weeks||[]).filter(function(w){ return w.path; }).slice().reverse();
+    document.getElementById("weeks").innerHTML = list.map(function(w){
+      var isCur = cw && w.season===cw.season && w.week===cw.week;
+      return '<button type="button" class="wk'+(isCur?" current":"")+'" '+
+        'data-path="'+esc(w.path)+'" data-season="'+w.season+'" data-week="'+w.week+'">'+
+        w.season+' W'+w.week+'</button>';
+    }).join("");
+    document.getElementById("archiveNote").textContent = list.length+" weeks available.";
+
+    document.querySelectorAll("#weeks .wk").forEach(function(btn){
+      btn.addEventListener("click",function(){
+        document.querySelectorAll("#weeks .wk").forEach(function(b){ b.classList.remove("viewing"); });
+        btn.classList.add("viewing");
+        var isCur = btn.classList.contains("current");
+        fetch(btn.getAttribute("data-path"),{cache:"no-store"})
+          .then(function(r){ return r.json(); })
+          .then(function(L){ renderWeekPanel(L, isCur); window.scrollTo({top:0,behavior:"smooth"}); })
+          .catch(function(){});
+      });
+    });
+  }
 
   fetch("site/data.json",{cache:"no-store"})
     .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
-    .then(render)
+    .then(function(d){
+      if(d.latest) renderWeekPanel(d.latest, true);
+      wireWeekChips(d);
+      renderAccuracy(d.accuracy);
+      document.getElementById("stamp").textContent =
+        "Updated "+(d.generated_at||"").replace("T"," ").replace("+00:00","Z");
+    })
     .catch(function(){
       document.getElementById("weekPanel").innerHTML =
         '<div class="panel-body"><p style="color:var(--muted)">Could not load '+
         '<code class="mono">site/data.json</code>. Regenerate it with '+
         '<code class="mono">python Betting/build_site.py</code>.</p></div>';
     });
-
-  function render(d){
-    var L=d.latest;
-
-    // This week — every game, both teams' predicted win probability.
-    if(L){
-      var head='<div class="panel-head"><div><strong>'+L.season+' · Week '+L.week+
-        '</strong></div><span class="pill none">'+(L.games?L.games.length:0)+' games</span></div>';
-      var body;
-      if(L.games && L.games.length){
-        body='<div class="panel-body"><div class="tablewrap"><table><thead><tr>'+
-          '<th>Matchup</th><th style="text-align:left">Win probability</th></tr></thead><tbody>'+
-          L.games.map(function(g){
-            var pa=g.prob_a!=null?pct(g.prob_a):"—", pb=g.prob_b!=null?pct(g.prob_b):"—";
-            var raw=(g.prob_a_raw!=null&&g.prob_b_raw!=null)
-              ? ' title="Before normalizing: '+esc(g.team_a)+' '+pct(g.prob_a_raw)+
-                ' + '+esc(g.team_b)+' '+pct(g.prob_b_raw)+' = '+
-                pct(g.prob_a_raw+g.prob_b_raw)+'"' : '';
-            return '<tr><td><strong>'+esc(g.team_a)+'</strong> <span style="color:var(--muted)">vs</span> '+
-              '<strong>'+esc(g.team_b)+'</strong></td>'+
-              '<td class="mono" style="text-align:left"'+raw+'>'+esc(g.team_a)+' '+pa+
-              ' &nbsp;·&nbsp; '+esc(g.team_b)+' '+pb+'</td></tr>';
-          }).join("")+'</tbody></table></div></div>';
-      } else {
-        body='<div class="panel-body"><div class="empty">'+
-          '<span class="big">Predictions for this week aren\'t posted yet.</span>'+
-          (L.notes?'<span class="why">'+esc(L.notes)+'</span>':'')+
-          '</div></div>';
-      }
-      document.getElementById("weekPanel").innerHTML=head+body;
-      var hs=L.history_source_counts||{}, parts=Object.keys(hs).map(function(k){
-        return hs[k]+" "+k.replace(/_/g," ");});
-      document.getElementById("weekNote").textContent =
-        parts.length ? "Feature basis: "+parts.join(", ")+"." : "";
-    }
-
-    // Archive — every week the pipeline has evaluated, most recent first.
-    document.getElementById("weeks").innerHTML=(d.weeks||[]).slice().reverse().map(function(w){
-      return '<span class="wk">'+w.season+' W'+w.week+'</span>';
-    }).join("");
-    document.getElementById("archiveNote").textContent =
-      (d.weeks||[]).length+" weeks evaluated so far.";
-
-    document.getElementById("stamp").textContent="Updated "+(d.generated_at||"").replace("T"," ").replace("+00:00","Z");
-  }
 })();
 </script>
 </body>

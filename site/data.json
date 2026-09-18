@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T21:10:14+00:00",
+  "generated_at": "2026-09-18T21:16:38+00:00",
   "latest": {
     "season": 2026,
     "week": 2,
@@ -19,7 +19,9 @@
         "prob_a_raw": 0.3958,
         "team_b": "SEA",
         "prob_b": 0.6261452725040144,
-        "prob_b_raw": 0.6629
+        "prob_b_raw": 0.6629,
+        "market_a": 0.3358,
+        "market_b": 0.6642
       },
       {
         "game_id": "2026_02_CAR_ATL",
@@ -28,7 +30,9 @@
         "prob_a_raw": 0.3818,
         "team_b": "CAR",
         "prob_b": 0.6200616976813613,
-        "prob_b_raw": 0.6231
+        "prob_b_raw": 0.6231,
+        "market_a": 0.4248,
+        "market_b": 0.5752
       },
       {
         "game_id": "2026_02_NO_BAL",
@@ -37,7 +41,9 @@
         "prob_a_raw": 0.7264,
         "team_b": "NO",
         "prob_b": 0.2344820318263252,
-        "prob_b_raw": 0.2225
+        "prob_b_raw": 0.2225,
+        "market_a": 0.777,
+        "market_b": 0.223
       },
       {
         "game_id": "2026_02_DET_BUF",
@@ -46,7 +52,9 @@
         "prob_a_raw": 0.7296,
         "team_b": "DET",
         "prob_b": 0.2835820895522388,
-        "prob_b_raw": 0.2888
+        "prob_b_raw": 0.2888,
+        "market_a": 0.6826,
+        "market_b": 0.3174
       },
       {
         "game_id": "2026_02_MIN_CHI",
@@ -55,7 +63,9 @@
         "prob_a_raw": 0.644,
         "team_b": "MIN",
         "prob_b": 0.3372440053514459,
-        "prob_b_raw": 0.3277
+        "prob_b_raw": 0.3277,
+        "market_a": 0.6428,
+        "market_b": 0.3572
       },
       {
         "game_id": "2026_02_CIN_HOU",
@@ -64,7 +74,9 @@
         "prob_a_raw": 0.513,
         "team_b": "HOU",
         "prob_b": 0.5119398725145087,
-        "prob_b_raw": 0.5381
+        "prob_b_raw": 0.5381,
+        "market_a": 0.4339,
+        "market_b": 0.5661
       },
       {
         "game_id": "2026_02_CLE_TB",
@@ -73,7 +85,9 @@
         "prob_a_raw": 0.2973,
         "team_b": "TB",
         "prob_b": 0.7193694544081555,
-        "prob_b_raw": 0.7621
+        "prob_b_raw": 0.7621,
+        "market_a": 0.2012,
+        "market_b": 0.7988
       },
       {
         "game_id": "2026_02_WAS_DAL",
@@ -82,7 +96,9 @@
         "prob_a_raw": 0.674,
         "team_b": "WAS",
         "prob_b": 0.34301588848815673,
-        "prob_b_raw": 0.3519
+        "prob_b_raw": 0.3519,
+        "market_a": 0.6642,
+        "market_b": 0.3358
       },
       {
         "game_id": "2026_02_JAX_DEN",
@@ -91,7 +107,9 @@
         "prob_a_raw": 0.5051,
         "team_b": "JAX",
         "prob_b": 0.4920044252237756,
-        "prob_b_raw": 0.4892
+        "prob_b_raw": 0.4892,
+        "market_a": 0.5752,
+        "market_b": 0.4248
       },
       {
         "game_id": "2026_02_GB_NYJ",
@@ -100,7 +118,9 @@
         "prob_a_raw": 0.6497,
         "team_b": "NYJ",
         "prob_b": 0.37726444934342945,
-        "prob_b_raw": 0.3936
+        "prob_b_raw": 0.3936,
+        "market_a": 0.6428,
+        "market_b": 0.3572
       },
       {
         "game_id": "2026_02_IND_KC",
@@ -109,7 +129,9 @@
         "prob_a_raw": 0.3179,
         "team_b": "KC",
         "prob_b": 0.6793099969736709,
-        "prob_b_raw": 0.6734
+        "prob_b_raw": 0.6734,
+        "market_a": 0.2775,
+        "market_b": 0.7225
       },
       {
         "game_id": "2026_02_NYG_LA",
@@ -118,7 +140,9 @@
         "prob_a_raw": 0.7168,
         "team_b": "NYG",
         "prob_b": 0.34490952293913363,
-        "prob_b_raw": 0.3774
+        "prob_b_raw": 0.3774,
+        "market_a": 0.7682,
+        "market_b": 0.2318
       },
       {
         "game_id": "2026_02_LV_LAC",
@@ -127,7 +151,9 @@
         "prob_a_raw": 0.6527,
         "team_b": "LV",
         "prob_b": 0.3460575092676084,
-        "prob_b_raw": 0.3454
+        "prob_b_raw": 0.3454,
+        "market_a": 0.7316,
+        "market_b": 0.2684
       },
       {
         "game_id": "2026_02_MIA_SF",
@@ -136,7 +162,9 @@
         "prob_a_raw": 0.2008,
         "team_b": "SF",
         "prob_b": 0.7998405103668261,
-        "prob_b_raw": 0.8024
+        "prob_b_raw": 0.8024,
+        "market_a": 0.1214,
+        "market_b": 0.8786
       },
       {
         "game_id": "2026_02_PIT_NE",
@@ -145,7 +173,9 @@
         "prob_a_raw": 0.6503,
         "team_b": "PIT",
         "prob_b": 0.3627633512983831,
-        "prob_b_raw": 0.3702
+        "prob_b_raw": 0.3702,
+        "market_a": 0.6642,
+        "market_b": 0.3358
       },
       {
         "game_id": "2026_02_PHI_TEN",
@@ -154,7 +184,9 @@
         "prob_a_raw": 0.6765,
         "team_b": "TEN",
         "prob_b": 0.30615384615384617,
-        "prob_b_raw": 0.2985
+        "prob_b_raw": 0.2985,
+        "market_a": 0.7352,
+        "market_b": 0.2648
       }
     ]
   },
@@ -165,7 +197,8 @@
       "games": 16,
       "picks": 0,
       "status": "no_qualifying_edge",
-      "file": "picks_2025_wk01.json"
+      "file": "picks_2025_wk01.json",
+      "path": "weeks/2025_wk01.json"
     },
     {
       "season": 2025,
@@ -173,7 +206,8 @@
       "games": 16,
       "picks": 0,
       "status": "no_qualifying_edge",
-      "file": "picks_2025_wk02.json"
+      "file": "picks_2025_wk02.json",
+      "path": "weeks/2025_wk02.json"
     },
     {
       "season": 2025,
@@ -181,7 +215,8 @@
       "games": 16,
       "picks": 0,
       "status": "no_qualifying_edge",
-      "file": "picks_2025_wk03.json"
+      "file": "picks_2025_wk03.json",
+      "path": "weeks/2025_wk03.json"
     },
     {
       "season": 2025,
@@ -189,7 +224,8 @@
       "games": 15,
       "picks": 0,
       "status": "no_qualifying_edge",
-      "file": "picks_2025_wk04.json"
+      "file": "picks_2025_wk04.json",
+      "path": "weeks/2025_wk04.json"
     },
     {
       "season": 2025,
@@ -197,7 +233,8 @@
       "games": 14,
       "picks": 4,
       "status": "picks_available",
-      "file": "picks_2025_wk05.json"
+      "file": "picks_2025_wk05.json",
+      "path": "weeks/2025_wk05.json"
     },
     {
       "season": 2025,
@@ -205,7 +242,8 @@
       "games": 15,
       "picks": 6,
       "status": "picks_available",
-      "file": "picks_2025_wk06.json"
+      "file": "picks_2025_wk06.json",
+      "path": "weeks/2025_wk06.json"
     },
     {
       "season": 2025,
@@ -213,7 +251,8 @@
       "games": 15,
       "picks": 4,
       "status": "picks_available",
-      "file": "picks_2025_wk07.json"
+      "file": "picks_2025_wk07.json",
+      "path": "weeks/2025_wk07.json"
     },
     {
       "season": 2025,
@@ -221,7 +260,8 @@
       "games": 13,
       "picks": 4,
       "status": "picks_available",
-      "file": "picks_2025_wk08.json"
+      "file": "picks_2025_wk08.json",
+      "path": "weeks/2025_wk08.json"
     },
     {
       "season": 2025,
@@ -229,7 +269,8 @@
       "games": 14,
       "picks": 4,
       "status": "picks_available",
-      "file": "picks_2025_wk09.json"
+      "file": "picks_2025_wk09.json",
+      "path": "weeks/2025_wk09.json"
     },
     {
       "season": 2025,
@@ -237,7 +278,8 @@
       "games": 14,
       "picks": 1,
       "status": "picks_available",
-      "file": "picks_2025_wk10.json"
+      "file": "picks_2025_wk10.json",
+      "path": "weeks/2025_wk10.json"
     },
     {
       "season": 2025,
@@ -245,7 +287,8 @@
       "games": 15,
       "picks": 2,
       "status": "picks_available",
-      "file": "picks_2025_wk11.json"
+      "file": "picks_2025_wk11.json",
+      "path": "weeks/2025_wk11.json"
     },
     {
       "season": 2025,
@@ -253,7 +296,8 @@
       "games": 14,
       "picks": 3,
       "status": "picks_available",
-      "file": "picks_2025_wk12.json"
+      "file": "picks_2025_wk12.json",
+      "path": "weeks/2025_wk12.json"
     },
     {
       "season": 2025,
@@ -261,7 +305,8 @@
       "games": 16,
       "picks": 6,
       "status": "picks_available",
-      "file": "picks_2025_wk13.json"
+      "file": "picks_2025_wk13.json",
+      "path": "weeks/2025_wk13.json"
     },
     {
       "season": 2025,
@@ -269,7 +314,8 @@
       "games": 14,
       "picks": 4,
       "status": "picks_available",
-      "file": "picks_2025_wk14.json"
+      "file": "picks_2025_wk14.json",
+      "path": "weeks/2025_wk14.json"
     },
     {
       "season": 2025,
@@ -277,7 +323,8 @@
       "games": 16,
       "picks": 6,
       "status": "picks_available",
-      "file": "picks_2025_wk15.json"
+      "file": "picks_2025_wk15.json",
+      "path": "weeks/2025_wk15.json"
     },
     {
       "season": 2025,
@@ -285,7 +332,8 @@
       "games": 16,
       "picks": 2,
       "status": "picks_available",
-      "file": "picks_2025_wk16.json"
+      "file": "picks_2025_wk16.json",
+      "path": "weeks/2025_wk16.json"
     },
     {
       "season": 2025,
@@ -293,7 +341,8 @@
       "games": 16,
       "picks": 5,
       "status": "picks_available",
-      "file": "picks_2025_wk17.json"
+      "file": "picks_2025_wk17.json",
+      "path": "weeks/2025_wk17.json"
     },
     {
       "season": 2025,
@@ -301,7 +350,8 @@
       "games": 16,
       "picks": 6,
       "status": "picks_available",
-      "file": "picks_2025_wk18.json"
+      "file": "picks_2025_wk18.json",
+      "path": "weeks/2025_wk18.json"
     },
     {
       "season": 2026,
@@ -309,7 +359,8 @@
       "games": 16,
       "picks": 0,
       "status": "no_qualifying_edge",
-      "file": "picks_2026_wk02.json"
+      "file": "picks_2026_wk02.json",
+      "path": "weeks/2026_wk02.json"
     },
     {
       "season": 2026,
@@ -317,7 +368,8 @@
       "games": 16,
       "picks": 0,
       "status": "no_qualifying_edge",
-      "file": "picks_2026_wk03.json"
+      "file": "picks_2026_wk03.json",
+      "path": "weeks/2026_wk03.json"
     }
   ],
   "metrics": {
@@ -404,8 +456,7 @@
       "team_games": 542
     }
   },
-  "live": {
-    "graded": 0,
-    "picks": 0
+  "accuracy": {
+    "graded": 0
   }
 }

@@ -81,6 +81,10 @@ def read_weeks() -> list[dict]:
     return sorted(weeks, key=lambda w: (w["season"], w["week"]))
 
 
+def week_id(season: int, week: int) -> str:
+    return f"{season}_wk{week:02d}"
+
+
 def _pair_games(all_games: list[dict]) -> list[dict]:
     """Each team-game is its own row (both sides of a matchup appear separately).
     Pair them into one row per real game so a public list doesn't show the same
@@ -113,8 +117,60 @@ def _pair_games(all_games: list[dict]) -> list[dict]:
             "game_id": gid,
             "team_a": a.get("team"), "prob_a": norm_a, "prob_a_raw": pa,
             "team_b": b.get("team"), "prob_b": norm_b, "prob_b_raw": pb,
+            # De-vigged market probability — already sums to 1 across the two
+            # sides by construction (Shin de-vig), so no renormalization needed.
+            "market_a": a.get("market_prob_devig"),
+            "market_b": b.get("market_prob_devig"),
         })
     return sorted(games, key=lambda g: g["team_a"] or "")
+
+
+def _not_yet_generated(season: int, week: int) -> dict:
+    return {
+        "season": season, "week": week, "status": "not_yet_generated",
+        "games_evaluated": 0, "qualifying_picks": 0,
+        "notes": (f"Predictions for {season} week {week} haven't been generated "
+                 f"yet. Run weekly_picks.py --season {season} --week {week}."),
+        "history_source_counts": {}, "picks": [], "games": [],
+    }
+
+
+def week_payload(p: dict) -> dict:
+    """The shape both site/data.json's "latest" and each per-week file share."""
+    return {
+        "season": p["season"], "week": p["week"],
+        "status": p["status"],
+        "generated_at": p.get("generated_at"),
+        "games_evaluated": p.get("games_evaluated"),
+        "qualifying_picks": p.get("qualifying_picks", 0),
+        "insufficient_history": p.get("insufficient_history", False),
+        "notes": p.get("notes", ""),
+        "history_source_counts": p.get("history_source_counts", {}),
+        "picks": p.get("picks", []),          # kept for later — not rendered yet
+        "games": _pair_games(p.get("all_games", [])),
+    }
+
+
+def write_week_files(weeks: list[dict]) -> list[dict]:
+    """One small JSON per week under site/weeks/, so the archive can link to a
+    real, independently-loadable page of that week's games instead of a chip that
+    goes nowhere. Returns `weeks` with a "path" added for each file actually
+    written — a week with no file gets no path, and the frontend omits it rather
+    than rendering a dead link."""
+    weeks_dir = SITE_DIR / "weeks"
+    weeks_dir.mkdir(parents=True, exist_ok=True)
+    out = []
+    for w in weeks:
+        try:
+            p = json.loads((OUT_DIR / w["file"]).read_text())
+            payload = week_payload(p)
+        except Exception:
+            out.append({**w, "path": None})
+            continue
+        wid = week_id(w["season"], w["week"])
+        (weeks_dir / f"{wid}.json").write_text(json.dumps(payload, indent=2))
+        out.append({**w, "path": f"weeks/{wid}.json"})
+    return out
 
 
 def latest_week() -> dict | None:
@@ -130,14 +186,7 @@ def latest_week() -> dict | None:
         if match is None:
             # The actually-current week hasn't had predictions generated yet.
             # Say so rather than silently showing a different week.
-            return {
-                "season": season, "week": week, "status": "not_yet_generated",
-                "games_evaluated": 0, "qualifying_picks": 0,
-                "notes": (f"Predictions for {season} week {week} haven't been "
-                         f"generated yet. Run weekly_picks.py --season {season} "
-                         f"--week {week}."),
-                "history_source_counts": {}, "picks": [], "games": [],
-            }
+            return _not_yet_generated(season, week)
         newest = match
     else:
         # No DB connection to determine the real current week (e.g. building the
@@ -145,18 +194,7 @@ def latest_week() -> dict | None:
         newest = weeks[-1]
 
     p = json.loads((OUT_DIR / newest["file"]).read_text())
-    return {
-        "season": p["season"], "week": p["week"],
-        "status": p["status"],
-        "generated_at": p.get("generated_at"),
-        "games_evaluated": p.get("games_evaluated"),
-        "qualifying_picks": p.get("qualifying_picks", 0),
-        "insufficient_history": p.get("insufficient_history", False),
-        "notes": p.get("notes", ""),
-        "history_source_counts": p.get("history_source_counts", {}),
-        "picks": p.get("picks", []),          # kept for later — not rendered yet
-        "games": _pair_games(p.get("all_games", [])),
-    }
+    return week_payload(p)
 
 
 def model_metrics() -> dict:
@@ -189,45 +227,76 @@ def model_metrics() -> dict:
     return out
 
 
-def graded_summary() -> dict:
-    """Live results, once any week has been graded. Empty until then."""
+MIN_GRADED_FOR_CONFIDENCE = 30  # below this, accuracy is a coin flip's width of noise
+
+
+def accuracy_summary() -> dict:
+    """Real-world model accuracy, tracked as weeks actually get graded.
+
+    Every prediction is graded here (not just qualifying picks) — that's what
+    `predictions` was designed to log every game for. Empty and honest until
+    grade_week.py has run against a completed week; no placeholder numbers.
+    """
     try:
         from src.db import get_engine
-        d = pd.read_sql(
-            "SELECT r.won, r.is_pick, r.payout, r.bankroll_after "
-            "FROM pick_results r", get_engine())
+        d = pd.read_sql("""
+            SELECT p.season, p.week, p.model_prob, p.is_pick, r.won, r.payout
+            FROM predictions p JOIN pick_results r USING (game_id, team)
+        """, get_engine())
     except Exception:
-        return {"graded": 0, "picks": 0}
+        return {"graded": 0}
     if d.empty:
-        return {"graded": 0, "picks": 0}
+        return {"graded": 0}
+
+    d["correct"] = ((d["model_prob"] > 0.5).astype(int) == d["won"]).astype(int)
     picks = d[d["is_pick"] == True]  # noqa: E712
-    return {
+
+    by_week = (d.groupby(["season", "week"], as_index=False)
+                .agg(games=("correct", "size"), correct=("correct", "sum")))
+    by_week["accuracy"] = (by_week["correct"] / by_week["games"]).round(4)
+    by_week = by_week.sort_values(["season", "week"])
+
+    out = {
         "graded": int(len(d)),
-        "picks": int(len(picks)),
-        "record": (f"{int(picks['won'].sum())}-{int((1 - picks['won']).sum())}"
-                   if len(picks) else None),
-        "net": round(float(picks["payout"].sum()), 2) if len(picks) else 0.0,
+        "correct": int(d["correct"].sum()),
+        "accuracy": round(float(d["correct"].mean()), 4),
+        "record": f"{int(d['correct'].sum())}-{int(len(d) - d['correct'].sum())}",
+        "picks_graded": int(len(picks)),
+        "picks_record": (f"{int(picks['won'].sum())}-{int((1 - picks['won']).sum())}"
+                         if len(picks) else None),
+        "picks_net": round(float(picks["payout"].sum()), 2) if len(picks) else 0.0,
+        "by_week": by_week.to_dict(orient="records"),
     }
+    if out["graded"] < MIN_GRADED_FOR_CONFIDENCE:
+        out["sample_note"] = (
+            f"Only {out['graded']} graded predictions so far — too few for this "
+            f"number to mean much. Treat it as a running count, not a result, "
+            f"until it clears {MIN_GRADED_FOR_CONFIDENCE}.")
+    return out
 
 
 def main() -> int:
     SITE_DIR.mkdir(parents=True, exist_ok=True)
+    weeks = write_week_files(read_weeks())
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "latest": latest_week(),
-        "weeks": read_weeks(),
+        "weeks": weeks,
         "metrics": model_metrics(),
-        "live": graded_summary(),
+        "accuracy": accuracy_summary(),
     }
     path = SITE_DIR / "data.json"
     path.write_text(json.dumps(payload, indent=2))
-    n = len(payload["weeks"])
+    n_ok = sum(1 for w in weeks if w.get("path"))
     latest = payload["latest"]
+    acc = payload["accuracy"]
     print(f"wrote {path.relative_to(PROJECT_ROOT)}")
-    print(f"  {n} weeks indexed")
+    print(f"  {n_ok} of {len(weeks)} weeks have a browsable page (site/weeks/)")
     if latest:
         print(f"  latest: {latest['season']} wk{latest['week']} — "
               f"{latest['qualifying_picks']} picks ({latest['status']})")
+    print(f"  accuracy: {acc['graded']} graded"
+          + (f", {acc['accuracy']:.1%} correct" if acc["graded"] else " (none yet)"))
     m = payload["metrics"]
     if m.get("benchmark_auc"):
         print(f"  benchmark {m['benchmark_auc']} vs production {m['production_auc']}")

@@ -1,0 +1,190 @@
+{
+  "season": 2025,
+  "week": 3,
+  "status": "no_qualifying_edge",
+  "generated_at": "2026-09-18T04:44:10.402599+00:00",
+  "games_evaluated": 16,
+  "qualifying_picks": 0,
+  "insufficient_history": true,
+  "notes": "Only 2 game(s) of in-season history; rolling features are near-empty this early and no edge should be expected.",
+  "history_source_counts": {},
+  "picks": [],
+  "games": [
+    {
+      "game_id": "2025_03_ARI_SF",
+      "team_a": "ARI",
+      "prob_a": 0.34678655359149896,
+      "prob_a_raw": 0.3394,
+      "team_b": "SF",
+      "prob_b": 0.6532134464085011,
+      "prob_b_raw": 0.6393,
+      "market_a": 0.4661,
+      "market_b": 0.5339
+    },
+    {
+      "game_id": "2025_03_ATL_CAR",
+      "team_a": "ATL",
+      "prob_a": 0.6347576006573541,
+      "prob_a_raw": 0.618,
+      "team_b": "CAR",
+      "prob_b": 0.36524239934264585,
+      "prob_b_raw": 0.3556,
+      "market_a": 0.6707,
+      "market_b": 0.3293
+    },
+    {
+      "game_id": "2025_03_DET_BAL",
+      "team_a": "BAL",
+      "prob_a": 0.5944042067665443,
+      "prob_a_raw": 0.5991,
+      "team_b": "DET",
+      "prob_b": 0.4055957932334557,
+      "prob_b_raw": 0.4088,
+      "market_a": 0.6884,
+      "market_b": 0.3116
+    },
+    {
+      "game_id": "2025_03_MIA_BUF",
+      "team_a": "BUF",
+      "prob_a": 0.7587680948217235,
+      "prob_a_raw": 0.781,
+      "team_b": "MIA",
+      "prob_b": 0.24123190517827647,
+      "prob_b_raw": 0.2483,
+      "market_a": 0.8675,
+      "market_b": 0.1325
+    },
+    {
+      "game_id": "2025_03_DAL_CHI",
+      "team_a": "CHI",
+      "prob_a": 0.4096247791289887,
+      "prob_a_raw": 0.3941,
+      "team_b": "DAL",
+      "prob_b": 0.5903752208710114,
+      "prob_b_raw": 0.568,
+      "market_a": 0.4661,
+      "market_b": 0.5339
+    },
+    {
+      "game_id": "2025_03_CIN_MIN",
+      "team_a": "CIN",
+      "prob_a": 0.37320574162679426,
+      "prob_a_raw": 0.3666,
+      "team_b": "MIN",
+      "prob_b": 0.6267942583732058,
+      "prob_b_raw": 0.6157,
+      "market_a": 0.4027,
+      "market_b": 0.5973
+    },
+    {
+      "game_id": "2025_03_GB_CLE",
+      "team_a": "CLE",
+      "prob_a": 0.26264486082530053,
+      "prob_a_raw": 0.2425,
+      "team_b": "GB",
+      "prob_b": 0.7373551391746994,
+      "prob_b_raw": 0.6808,
+      "market_a": 0.1964,
+      "market_b": 0.8036
+    },
+    {
+      "game_id": "2025_03_DEN_LAC",
+      "team_a": "DEN",
+      "prob_a": 0.39592094196804034,
+      "prob_a_raw": 0.3766,
+      "team_b": "LAC",
+      "prob_b": 0.6040790580319596,
+      "prob_b_raw": 0.5746,
+      "market_a": 0.4135,
+      "market_b": 0.5865
+    },
+    {
+      "game_id": "2025_03_HOU_JAX",
+      "team_a": "HOU",
+      "prob_a": 0.38566656544184635,
+      "prob_a_raw": 0.381,
+      "team_b": "JAX",
+      "prob_b": 0.6143334345581537,
+      "prob_b_raw": 0.6069,
+      "market_a": 0.4661,
+      "market_b": 0.5339
+    },
+    {
+      "game_id": "2025_03_IND_TEN",
+      "team_a": "IND",
+      "prob_a": 0.7191066029454795,
+      "prob_a_raw": 0.7373,
+      "team_b": "TEN",
+      "prob_b": 0.28089339705452065,
+      "prob_b_raw": 0.288,
+      "market_a": 0.6884,
+      "market_b": 0.3116
+    },
+    {
+      "game_id": "2025_03_KC_NYG",
+      "team_a": "KC",
+      "prob_a": 0.6865686084768724,
+      "prob_a_raw": 0.7095,
+      "team_b": "NYG",
+      "prob_b": 0.31343139152312754,
+      "prob_b_raw": 0.3239,
+      "market_a": 0.7435,
+      "market_b": 0.2565
+    },
+    {
+      "game_id": "2025_03_LA_PHI",
+      "team_a": "LA",
+      "prob_a": 0.3232353232353232,
+      "prob_a_raw": 0.3265,
+      "team_b": "PHI",
+      "prob_b": 0.6767646767646768,
+      "prob_b_raw": 0.6836,
+      "market_a": 0.3572,
+      "market_b": 0.6428
+    },
+    {
+      "game_id": "2025_03_LV_WAS",
+      "team_a": "LV",
+      "prob_a": 0.44680394680394675,
+      "prob_a_raw": 0.4166,
+      "team_b": "WAS",
+      "prob_b": 0.5531960531960531,
+      "prob_b_raw": 0.5158,
+      "market_a": 0.4135,
+      "market_b": 0.5865
+    },
+    {
+      "game_id": "2025_03_PIT_NE",
+      "team_a": "NE",
+      "prob_a": 0.4457070707070708,
+      "prob_a_raw": 0.4589,
+      "team_b": "PIT",
+      "prob_b": 0.5542929292929294,
+      "prob_b_raw": 0.5707,
+      "market_a": 0.4773,
+      "market_b": 0.5227
+    },
+    {
+      "game_id": "2025_03_NO_SEA",
+      "team_a": "NO",
+      "prob_a": 0.21414659149154283,
+      "prob_a_raw": 0.2089,
+      "team_b": "SEA",
+      "prob_b": 0.7858534085084572,
+      "prob_b_raw": 0.7666,
+      "market_a": 0.2318,
+      "market_b": 0.7682
+    },
+    {
+      "game_id": "2025_03_NYJ_TB",
+      "team_a": "NYJ",
+      "prob_a": 0.38876241721854304,
+      "prob_a_raw": 0.3757,
+      "team_b": "TB",
+      "prob_b": 0.611237582781457,
+      "prob_b_raw": 0.5907,
+      "market_a": 0.2457,
+      "market_b": 0.7543
+    }
+  ]
+}
