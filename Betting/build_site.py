@@ -85,10 +85,31 @@ def week_id(season: int, week: int) -> str:
     return f"{season}_wk{week:02d}"
 
 
-def _pair_games(all_games: list[dict]) -> list[dict]:
+def actual_winners() -> dict[str, str]:
+    """game_id -> winning team code, for every completed REG game.
+
+    Ties are naturally absent: the model panel excludes result=0 upstream (see
+    src/features.py's _PLAYED filter), so tie games never appear in picks_*.json
+    in the first place — nothing extra to filter here.
+    """
+    try:
+        from src.db import get_engine
+        d = pd.read_sql("""
+            SELECT game_id, home_team, away_team, result
+            FROM games
+            WHERE game_type = 'REG' AND result IS NOT NULL AND result <> 0
+        """, get_engine())
+    except Exception:
+        return {}
+    return {r.game_id: (r.home_team if r.result > 0 else r.away_team)
+            for r in d.itertuples()}
+
+
+def _pair_games(all_games: list[dict], winners: dict[str, str] | None = None) -> list[dict]:
     """Each team-game is its own row (both sides of a matchup appear separately).
     Pair them into one row per real game so a public list doesn't show the same
     matchup twice."""
+    winners = winners or {}
     by_id: dict[str, list[dict]] = {}
     for g in all_games:
         gid = g.get("game_id")
@@ -127,6 +148,15 @@ def _pair_games(all_games: list[dict]) -> list[dict]:
             else:
                 favorite_team, edge_favorite = b.get("team"), -edge_a
 
+        winner = winners.get(gid)
+        # Correctness is judged against the SAME favorite used for the edge column
+        # (whichever of norm_a/norm_b is larger) — not a naive "model_prob > 0.5"
+        # per team-row, which can disagree with itself when the two independent
+        # raw probabilities both land the same side of 0.5 (observed: their sum
+        # ranges 0.949-1.094, so that happens). Comparing the pair directly is the
+        # one definition that's always well-formed. None means not yet played.
+        model_correct = (favorite_team == winner) if (favorite_team and winner) else None
+
         games.append({
             "game_id": gid,
             "team_a": a.get("team"), "prob_a": norm_a, "prob_a_raw": pa,
@@ -137,6 +167,7 @@ def _pair_games(all_games: list[dict]) -> list[dict]:
             # The model's favorite (higher of prob_a/prob_b) and ITS edge vs the
             # market — the number that reads naturally, not always team_a's.
             "favorite_team": favorite_team, "edge_favorite": edge_favorite,
+            "actual_winner": winner, "model_correct": model_correct,
         })
     return sorted(games, key=lambda g: g["team_a"] or "")
 
@@ -151,7 +182,7 @@ def _not_yet_generated(season: int, week: int) -> dict:
     }
 
 
-def week_payload(p: dict) -> dict:
+def week_payload(p: dict, winners: dict[str, str]) -> dict:
     """The shape both site/data.json's "latest" and each per-week file share."""
     return {
         "season": p["season"], "week": p["week"],
@@ -163,11 +194,11 @@ def week_payload(p: dict) -> dict:
         "notes": p.get("notes", ""),
         "history_source_counts": p.get("history_source_counts", {}),
         "picks": p.get("picks", []),          # kept for later — not rendered yet
-        "games": _pair_games(p.get("all_games", [])),
+        "games": _pair_games(p.get("all_games", []), winners),
     }
 
 
-def write_week_files(weeks: list[dict]) -> list[dict]:
+def write_week_files(weeks: list[dict], winners: dict[str, str]) -> list[dict]:
     """One small JSON per week under site/weeks/, so the archive can link to a
     real, independently-loadable page of that week's games instead of a chip that
     goes nowhere. Returns `weeks` with a "path" added for each file actually
@@ -179,7 +210,7 @@ def write_week_files(weeks: list[dict]) -> list[dict]:
     for w in weeks:
         try:
             p = json.loads((OUT_DIR / w["file"]).read_text())
-            payload = week_payload(p)
+            payload = week_payload(p, winners)
         except Exception:
             out.append({**w, "path": None})
             continue
@@ -192,7 +223,7 @@ def write_week_files(weeks: list[dict]) -> list[dict]:
     return out
 
 
-def latest_week() -> dict | None:
+def latest_week(winners: dict[str, str]) -> dict | None:
     cw = current_week()
     weeks = read_weeks()
     if not weeks:
@@ -213,7 +244,7 @@ def latest_week() -> dict | None:
         newest = weeks[-1]
 
     p = json.loads((OUT_DIR / newest["file"]).read_text())
-    return week_payload(p)
+    return week_payload(p, winners)
 
 
 def model_metrics() -> dict:
@@ -249,60 +280,82 @@ def model_metrics() -> dict:
 MIN_GRADED_FOR_CONFIDENCE = 30  # below this, accuracy is a coin flip's width of noise
 
 
-def accuracy_summary() -> dict:
-    """Real-world model accuracy, tracked as weeks actually get graded.
+def all_paired_games(winners: dict[str, str]) -> list[dict]:
+    """Every game across every picks_*.json, paired and graded against real
+    results where known. One definition of "correct" (from _pair_games), reused
+    by both per-week row highlighting and the accuracy tab below — not two
+    slightly different notions of correctness computed two different ways."""
+    out = []
+    for f in sorted(OUT_DIR.glob("picks_*.json")):
+        try:
+            p = json.loads(f.read_text())
+        except Exception:
+            continue
+        for g in _pair_games(p.get("all_games", []), winners):
+            out.append({"season": p["season"], "week": p["week"], **g})
+    return out
 
-    Every prediction is graded here (not just qualifying picks) — that's what
-    `predictions` was designed to log every game for. Empty and honest until
-    grade_week.py has run against a completed week; no placeholder numbers.
+
+def accuracy_summary(paired: list[dict]) -> dict:
+    """Real-world model accuracy, for every week the model has actually predicted
+    (not gated on grade_week.py — this reads straight from picks_*.json plus real
+    game results, which covers the full 2025 backtest and 2026 the moment a week's
+    games finish, with nothing extra to run). Empty and honest when nothing is
+    graded yet; no placeholder numbers.
+
+    Grain is one row per GAME (not per team-row) — "did the model's favorite win",
+    matching the same favorite/edge definition shown on every week's page.
     """
+    graded = [g for g in paired if g.get("model_correct") is not None]
+    if not graded:
+        out = {"graded": 0}
+    else:
+        d = pd.DataFrame(graded)
+        d["correct"] = d["model_correct"].astype(int)
+        by_week = (d.groupby(["season", "week"], as_index=False)
+                    .agg(games=("correct", "size"), correct=("correct", "sum")))
+        by_week["accuracy"] = (by_week["correct"] / by_week["games"]).round(4)
+        by_week = by_week.sort_values(["season", "week"])
+        out = {
+            "graded": int(len(d)),
+            "correct": int(d["correct"].sum()),
+            "accuracy": round(float(d["correct"].mean()), 4),
+            "record": f"{int(d['correct'].sum())}-{int(len(d) - d['correct'].sum())}",
+            "by_week": by_week.to_dict(orient="records"),
+        }
+        if out["graded"] < MIN_GRADED_FOR_CONFIDENCE:
+            out["sample_note"] = (
+                f"Only {out['graded']} graded games so far — too few for this "
+                f"number to mean much. Treat it as a running count, not a "
+                f"result, until it clears {MIN_GRADED_FOR_CONFIDENCE}.")
+
+    # Actual-money picks tracking is a separate concern (stakes, payout) and still
+    # needs grade_week.py to have run against the `predictions`/`pick_results`
+    # tables — kept optional so its absence never blanks the accuracy numbers above.
     try:
         from src.db import get_engine
-        d = pd.read_sql("""
-            SELECT p.season, p.week, p.model_prob, p.is_pick, r.won, r.payout
-            FROM predictions p JOIN pick_results r USING (game_id, team)
-        """, get_engine())
+        pr = pd.read_sql("SELECT r.won, r.is_pick, r.payout FROM pick_results r",
+                         get_engine())
+        picks = pr[pr["is_pick"] == True]  # noqa: E712
+        out["picks_graded"] = int(len(picks))
+        out["picks_record"] = (f"{int(picks['won'].sum())}-{int((1 - picks['won']).sum())}"
+                               if len(picks) else None)
+        out["picks_net"] = round(float(picks["payout"].sum()), 2) if len(picks) else 0.0
     except Exception:
-        return {"graded": 0}
-    if d.empty:
-        return {"graded": 0}
-
-    d["correct"] = ((d["model_prob"] > 0.5).astype(int) == d["won"]).astype(int)
-    picks = d[d["is_pick"] == True]  # noqa: E712
-
-    by_week = (d.groupby(["season", "week"], as_index=False)
-                .agg(games=("correct", "size"), correct=("correct", "sum")))
-    by_week["accuracy"] = (by_week["correct"] / by_week["games"]).round(4)
-    by_week = by_week.sort_values(["season", "week"])
-
-    out = {
-        "graded": int(len(d)),
-        "correct": int(d["correct"].sum()),
-        "accuracy": round(float(d["correct"].mean()), 4),
-        "record": f"{int(d['correct'].sum())}-{int(len(d) - d['correct'].sum())}",
-        "picks_graded": int(len(picks)),
-        "picks_record": (f"{int(picks['won'].sum())}-{int((1 - picks['won']).sum())}"
-                         if len(picks) else None),
-        "picks_net": round(float(picks["payout"].sum()), 2) if len(picks) else 0.0,
-        "by_week": by_week.to_dict(orient="records"),
-    }
-    if out["graded"] < MIN_GRADED_FOR_CONFIDENCE:
-        out["sample_note"] = (
-            f"Only {out['graded']} graded predictions so far — too few for this "
-            f"number to mean much. Treat it as a running count, not a result, "
-            f"until it clears {MIN_GRADED_FOR_CONFIDENCE}.")
+        out["picks_graded"], out["picks_record"], out["picks_net"] = 0, None, 0.0
     return out
 
 
 def main() -> int:
     SITE_DIR.mkdir(parents=True, exist_ok=True)
-    weeks = write_week_files(read_weeks())
+    winners = actual_winners()
+    weeks = write_week_files(read_weeks(), winners)
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "latest": latest_week(),
+        "latest": latest_week(winners),
         "weeks": weeks,
         "metrics": model_metrics(),
-        "accuracy": accuracy_summary(),
+        "accuracy": accuracy_summary(all_paired_games(winners)),
     }
     path = SITE_DIR / "data.json"
     path.write_text(json.dumps(payload, indent=2))

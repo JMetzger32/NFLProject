@@ -15,6 +15,7 @@
   --line:#d3d8d6; --line-soft:#e3e7e5;
   --accent:#1d6b57; --accent-soft:#e2efea;
   --warn:#a8442c; --warn-soft:#f6e7e2;
+  --correct-bg:rgba(29,107,87,.10); --incorrect-bg:rgba(168,68,44,.10);
   --shadow:0 1px 2px rgba(18,21,19,.05), 0 8px 24px -16px rgba(18,21,19,.25);
 }
 @media (prefers-color-scheme:dark){
@@ -24,6 +25,7 @@
     --line:#232a27; --line-soft:#1e2422;
     --accent:#4aa588; --accent-soft:#16241f;
     --warn:#d9705a; --warn-soft:#2a1a16;
+    --correct-bg:rgba(74,165,136,.16); --incorrect-bg:rgba(217,112,90,.16);
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.6);
   }
 }
@@ -33,6 +35,7 @@
   --line:#232a27; --line-soft:#1e2422;
   --accent:#4aa588; --accent-soft:#16241f;
   --warn:#d9705a; --warn-soft:#2a1a16;
+  --correct-bg:rgba(74,165,136,.16); --incorrect-bg:rgba(217,112,90,.16);
   --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.6);
 }
 *{box-sizing:border-box}
@@ -146,6 +149,9 @@ thead th{font-size:.7rem; letter-spacing:.07em; text-transform:uppercase;
   color:var(--muted); font-weight:600; background:var(--surface-2)}
 tbody tr:last-child td{border-bottom:none}
 tr.mk td{color:var(--ink-2); font-weight:600; background:var(--surface-2)}
+/* graded rows: color reinforces the "Result" text column, never carries it alone */
+tr.correct td{background:var(--correct-bg)}
+tr.incorrect td{background:var(--incorrect-bg)}
 
 /* method list */
 .steps{display:grid; gap:0; margin-top:18px; border:1px solid var(--line);
@@ -322,7 +328,8 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
     if(L.games && L.games.length){
       body='<div class="panel-body"><div class="tablewrap"><table><thead><tr>'+
         '<th>Matchup</th><th style="text-align:left">Win probability</th>'+
-        '<th style="text-align:left">Market</th><th style="text-align:left">Edge</th></tr></thead><tbody>'+
+        '<th style="text-align:left">Market</th><th style="text-align:left">Edge</th>'+
+        '<th style="text-align:left">Result</th></tr></thead><tbody>'+
         L.games.map(function(g){
           var pa=pct(g.prob_a), pb=pct(g.prob_b);
           var ma=pct(g.market_a), mb=pct(g.market_b);
@@ -335,13 +342,24 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
             var ep=(g.edge_favorite*100), sign=ep>=0?"+":"−", col=ep>=0?"var(--accent)":"var(--warn)";
             edgeCell='<span style="color:'+col+'">'+esc(g.favorite_team)+' '+sign+Math.abs(ep).toFixed(1)+'%</span>';
           }
-          return '<tr><td><strong>'+esc(g.team_a)+'</strong> <span style="color:var(--muted)">vs</span> '+
+          // Row tint reinforces this text, never replaces it — correctness is
+          // never color-only.
+          var rowClass='', resultCell='<span style="color:var(--muted)">pending</span>';
+          if(g.model_correct===true){
+            rowClass=' class="correct"';
+            resultCell='<span style="color:var(--accent)">✓ '+esc(g.favorite_team)+' won</span>';
+          } else if(g.model_correct===false){
+            rowClass=' class="incorrect"';
+            resultCell='<span style="color:var(--warn)">✗ '+esc(g.actual_winner)+' won</span>';
+          }
+          return '<tr'+rowClass+'><td><strong>'+esc(g.team_a)+'</strong> <span style="color:var(--muted)">vs</span> '+
             '<strong>'+esc(g.team_b)+'</strong></td>'+
             '<td class="mono" style="text-align:left"'+raw+'>'+esc(g.team_a)+' '+pa+
             ' &nbsp;·&nbsp; '+esc(g.team_b)+' '+pb+'</td>'+
             '<td class="mono" style="text-align:left; color:var(--ink-2)">'+esc(g.team_a)+' '+ma+
             ' &nbsp;·&nbsp; '+esc(g.team_b)+' '+mb+'</td>'+
-            '<td class="mono" style="text-align:left">'+edgeCell+'</td></tr>';
+            '<td class="mono" style="text-align:left">'+edgeCell+'</td>'+
+            '<td class="mono" style="text-align:left">'+resultCell+'</td></tr>';
         }).join("")+'</tbody></table></div></div>';
     } else {
       body='<div class="panel-body"><div class="empty">'+

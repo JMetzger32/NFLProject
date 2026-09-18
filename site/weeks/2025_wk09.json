@@ -90,7 +90,9 @@
       "market_a": 0.3859,
       "market_b": 0.6141,
       "favorite_team": "DAL",
-      "edge_favorite": 0.01641676689430238
+      "edge_favorite": 0.01641676689430238,
+      "actual_winner": "ARI",
+      "model_correct": false
     },
     {
       "game_id": "2025_09_ATL_NE",
@@ -103,7 +105,9 @@
       "market_a": 0.3068,
       "market_b": 0.6932,
       "favorite_team": "NE",
-      "edge_favorite": -0.020039826839826802
+      "edge_favorite": -0.020039826839826802,
+      "actual_winner": "NE",
+      "model_correct": true
     },
     {
       "game_id": "2025_09_BAL_MIA",
@@ -116,7 +120,9 @@
       "market_a": 0.7988,
       "market_b": 0.2012,
       "favorite_team": "BAL",
-      "edge_favorite": -0.09761035689293207
+      "edge_favorite": -0.09761035689293207,
+      "actual_winner": "BAL",
+      "model_correct": true
     },
     {
       "game_id": "2025_09_KC_BUF",
@@ -129,7 +135,9 @@
       "market_a": 0.4464,
       "market_b": 0.5536,
       "favorite_team": "KC",
-      "edge_favorite": -0.003195430747263195
+      "edge_favorite": -0.003195430747263195,
+      "actual_winner": "BUF",
+      "model_correct": false
     },
     {
       "game_id": "2025_09_CAR_GB",
@@ -142,7 +150,9 @@
       "market_a": 0.1121,
       "market_b": 0.8879,
       "favorite_team": "GB",
-      "edge_favorite": -0.12309339242546333
+      "edge_favorite": -0.12309339242546333,
+      "actual_winner": "CAR",
+      "model_correct": false
     },
     {
       "game_id": "2025_09_CHI_CIN",
@@ -155,7 +165,9 @@
       "market_a": 0.5973,
       "market_b": 0.4027,
       "favorite_team": "CHI",
-      "edge_favorite": 0.010370756448652263
+      "edge_favorite": 0.010370756448652263,
+      "actual_winner": "CHI",
+      "model_correct": true
     },
     {
       "game_id": "2025_09_DEN_HOU",
@@ -168,7 +180,9 @@
       "market_a": 0.4661,
       "market_b": 0.5339,
       "favorite_team": "HOU",
-      "edge_favorite": 0.11033282687780865
+      "edge_favorite": 0.11033282687780865,
+      "actual_winner": "DEN",
+      "model_correct": false
     },
     {
       "game_id": "2025_09_MIN_DET",
@@ -181,7 +195,9 @@
       "market_a": 0.825,
       "market_b": 0.175,
       "favorite_team": "DET",
-      "edge_favorite": -0.07823697681421249
+      "edge_favorite": -0.07823697681421249,
+      "actual_winner": "MIN",
+      "model_correct": false
     },
     {
       "game_id": "2025_09_IND_PIT",
@@ -194,7 +210,9 @@
       "market_a": 0.6277,
       "market_b": 0.3723,
       "favorite_team": "IND",
-      "edge_favorite": 0.029403691373739327
+      "edge_favorite": 0.029403691373739327,
+      "actual_winner": "PIT",
+      "model_correct": false
     },
     {
       "game_id": "2025_09_JAX_LV",
@@ -207,7 +225,9 @@
       "market_a": 0.5445,
       "market_b": 0.4555,
       "favorite_team": "JAX",
-      "edge_favorite": 0.018792393026941356
+      "edge_favorite": 0.018792393026941356,
+      "actual_winner": "JAX",
+      "model_correct": true
     },
     {
       "game_id": "2025_09_NO_LA",
@@ -220,7 +240,9 @@
       "market_a": 0.9027,
       "market_b": 0.0973,
       "favorite_team": "LA",
-      "edge_favorite": -0.10120074962518733
+      "edge_favorite": -0.10120074962518733,
+      "actual_winner": "LA",
+      "model_correct": true
     },
     {
       "game_id": "2025_09_LAC_TEN",
@@ -233,7 +255,9 @@
       "market_a": 0.8456,
       "market_b": 0.1544,
       "favorite_team": "LAC",
-      "edge_favorite": -0.034940542628174254
+      "edge_favorite": -0.034940542628174254,
+      "actual_winner": "LAC",
+      "model_correct": true
     },
     {
       "game_id": "2025_09_SF_NYG",
@@ -246,7 +270,9 @@
       "market_a": 0.4248,
       "market_b": 0.5752,
       "favorite_team": "SF",
-      "edge_favorite": 0.00016387613558654923
+      "edge_favorite": 0.00016387613558654923,
+      "actual_winner": "SF",
+      "model_correct": true
     },
     {
       "game_id": "2025_09_SEA_WAS",
@@ -259,7 +285,9 @@
       "market_a": 0.5752,
       "market_b": 0.4248,
       "favorite_team": "SEA",
-      "edge_favorite": 0.020657465397074692
+      "edge_favorite": 0.020657465397074692,
+      "actual_winner": "SEA",
+      "model_correct": true
     }
   ]
 }

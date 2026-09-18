@@ -23,7 +23,9 @@
       "market_a": 0.1919,
       "market_b": 0.8081,
       "favorite_team": "SF",
-      "edge_favorite": -0.0567968059899536
+      "edge_favorite": -0.0567968059899536,
+      "actual_winner": null,
+      "model_correct": null
     },
     {
       "game_id": "2026_03_ATL_GB",
@@ -36,7 +38,9 @@
       "market_a": 0.2648,
       "market_b": 0.7352,
       "favorite_team": "GB",
-      "edge_favorite": -0.03840978219335117
+      "edge_favorite": -0.03840978219335117,
+      "actual_winner": null,
+      "model_correct": null
     },
     {
       "game_id": "2026_03_BAL_DAL",
@@ -49,7 +53,9 @@
       "market_a": 0.5865,
       "market_b": 0.4135,
       "favorite_team": "BAL",
-      "edge_favorite": -0.012658346701896694
+      "edge_favorite": -0.012658346701896694,
+      "actual_winner": null,
+      "model_correct": null
     },
     {
       "game_id": "2026_03_LAC_BUF",
@@ -62,7 +68,9 @@
       "market_a": 0.5,
       "market_b": 0.5,
       "favorite_team": "BUF",
-      "edge_favorite": 0.028494786921753223
+      "edge_favorite": 0.028494786921753223,
+      "actual_winner": null,
+      "model_correct": null
     },
     {
       "game_id": "2026_03_CAR_CLE",
@@ -75,7 +83,9 @@
       "market_a": 0.5661,
       "market_b": 0.4339,
       "favorite_team": "CAR",
-      "edge_favorite": 0.006664465225014515
+      "edge_favorite": 0.006664465225014515,
+      "actual_winner": null,
+      "model_correct": null
     },
     {
       "game_id": "2026_03_PHI_CHI",
@@ -88,7 +98,9 @@
       "market_a": 0.5182,
       "market_b": 0.4818,
       "favorite_team": "CHI",
-      "edge_favorite": 0.05416520207456699
+      "edge_favorite": 0.05416520207456699,
+      "actual_winner": null,
+      "model_correct": null
     },
     {
       "game_id": "2026_03_CIN_PIT",
@@ -101,7 +113,9 @@
       "market_a": 0.5536,
       "market_b": 0.4464,
       "favorite_team": "CIN",
-      "edge_favorite": 0.035220602868012874
+      "edge_favorite": 0.035220602868012874,
+      "actual_winner": null,
+      "model_correct": null
     },
     {
       "game_id": "2026_03_LA_DEN",
@@ -114,7 +128,9 @@
       "market_a": 0.4464,
       "market_b": 0.5536,
       "favorite_team": "LA",
-      "edge_favorite": 0.02914301456119639
+      "edge_favorite": 0.02914301456119639,
+      "actual_winner": null,
+      "model_correct": null
     },
     {
       "game_id": "2026_03_NYJ_DET",
@@ -127,7 +143,9 @@
       "market_a": 0.5,
       "market_b": 0.5,
       "favorite_team": "DET",
-      "edge_favorite": 0.00692128927957969
+      "edge_favorite": 0.00692128927957969,
+      "actual_winner": null,
+      "model_correct": null
     },
     {
       "game_id": "2026_03_HOU_IND",
@@ -140,7 +158,9 @@
       "market_a": 0.5536,
       "market_b": 0.4464,
       "favorite_team": "HOU",
-      "edge_favorite": 0.04925423037716614
+      "edge_favorite": 0.04925423037716614,
+      "actual_winner": null,
+      "model_correct": null
     },
     {
       "game_id": "2026_03_NE_JAX",
@@ -153,7 +173,9 @@
       "market_a": 0.5536,
       "market_b": 0.4464,
       "favorite_team": "JAX",
-      "edge_favorite": 0.049982999809414896
+      "edge_favorite": 0.049982999809414896,
+      "actual_winner": null,
+      "model_correct": null
     },
     {
       "game_id": "2026_03_KC_MIA",
@@ -166,7 +188,9 @@
       "market_a": 0.7988,
       "market_b": 0.2012,
       "favorite_team": "KC",
-      "edge_favorite": -0.10065411572942129
+      "edge_favorite": -0.10065411572942129,
+      "actual_winner": null,
+      "model_correct": null
     },
     {
       "game_id": "2026_03_LV_NO",
@@ -179,7 +203,9 @@
       "market_a": 0.4027,
       "market_b": 0.5973,
       "favorite_team": "NO",
-      "edge_favorite": 0.008994289287202972
+      "edge_favorite": 0.008994289287202972,
+      "actual_winner": null,
+      "model_correct": null
     },
     {
       "game_id": "2026_03_MIN_TB",
@@ -192,7 +218,9 @@
       "market_a": 0.4661,
       "market_b": 0.5339,
       "favorite_team": "TB",
-      "edge_favorite": 0.014028757254352653
+      "edge_favorite": 0.014028757254352653,
+      "actual_winner": null,
+      "model_correct": null
     },
     {
       "game_id": "2026_03_TEN_NYG",
@@ -205,7 +233,9 @@
       "market_a": 0.6932,
       "market_b": 0.3068,
       "favorite_team": "NYG",
-      "edge_favorite": 0.03170327835471387
+      "edge_favorite": 0.03170327835471387,
+      "actual_winner": null,
+      "model_correct": null
     },
     {
       "game_id": "2026_03_SEA_WAS",
@@ -218,7 +248,9 @@
       "market_a": 0.5536,
       "market_b": 0.4464,
       "favorite_team": "SEA",
-      "edge_favorite": 0.07289325626204235
+      "edge_favorite": 0.07289325626204235,
+      "actual_winner": null,
+      "model_correct": null
     }
   ]
 }
