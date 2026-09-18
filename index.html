@@ -298,9 +298,13 @@ footer{border-top:1px solid var(--line); background:var(--surface); margin-top:2
           '<th>Matchup</th><th style="text-align:left">Win probability</th></tr></thead><tbody>'+
           L.games.map(function(g){
             var pa=g.prob_a!=null?pct(g.prob_a):"—", pb=g.prob_b!=null?pct(g.prob_b):"—";
+            var raw=(g.prob_a_raw!=null&&g.prob_b_raw!=null)
+              ? ' title="Before normalizing: '+esc(g.team_a)+' '+pct(g.prob_a_raw)+
+                ' + '+esc(g.team_b)+' '+pct(g.prob_b_raw)+' = '+
+                pct(g.prob_a_raw+g.prob_b_raw)+'"' : '';
             return '<tr><td><strong>'+esc(g.team_a)+'</strong> <span style="color:var(--muted)">vs</span> '+
               '<strong>'+esc(g.team_b)+'</strong></td>'+
-              '<td class="mono" style="text-align:left">'+esc(g.team_a)+' '+pa+
+              '<td class="mono" style="text-align:left"'+raw+'>'+esc(g.team_a)+' '+pa+
               ' &nbsp;·&nbsp; '+esc(g.team_b)+' '+pb+'</td></tr>';
           }).join("")+'</tbody></table></div></div>';
       } else {

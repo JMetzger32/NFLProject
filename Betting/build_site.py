@@ -96,10 +96,23 @@ def _pair_games(all_games: list[dict]) -> list[dict]:
         rows = sorted(rows, key=lambda r: r.get("team") or "")
         a = rows[0]
         b = rows[1] if len(rows) > 1 else {"team": a.get("opponent")}
+        pa, pb = a.get("model_prob"), b.get("model_prob")
+
+        # pa and pb come from two INDEPENDENT model calls (each team's own feature
+        # row through the ensemble), so nothing forces pa + pb == 1 — it was
+        # observed to range 0.949-1.094 on real weeks. Renormalize to a proper
+        # two-outcome distribution for display; the raw values are kept alongside
+        # so the site can still show how internally consistent a call was.
+        if pa is not None and pb is not None and (pa + pb) > 0:
+            total = pa + pb
+            norm_a, norm_b = pa / total, pb / total
+        else:
+            norm_a, norm_b = pa, pb
+
         games.append({
             "game_id": gid,
-            "team_a": a.get("team"), "prob_a": a.get("model_prob"),
-            "team_b": b.get("team"), "prob_b": b.get("model_prob"),
+            "team_a": a.get("team"), "prob_a": norm_a, "prob_a_raw": pa,
+            "team_b": b.get("team"), "prob_b": norm_b, "prob_b_raw": pb,
         })
     return sorted(games, key=lambda g: g["team_a"] or "")
 
