@@ -1,0 +1,2 @@
+early_market_auc,late_market_auc,observed_gap,ci_lo,ci_hi,frac_early_le_late,significant
+0.7464583333333332,0.7041357835182668,0.042322549815066446,-0.0420756906253012,0.1265588095595689,0.1656,False

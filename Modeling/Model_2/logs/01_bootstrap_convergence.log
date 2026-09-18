@@ -1,0 +1,15 @@
+== 01 — Bootstrap convergence
+  bootstrapping B=500 over 72 season-week blocks...
+blocks: 72 season-week units, median 32 rows (min 26, max 32)
+Season-level blocking was rejected: only 4 blocks, 35 distinct resample multisets,
+and a 31.6% chance of dropping an entire season per resample.
+  data   -> data/01_convergence.csv
+
+  B  mean_ci_width  median_ci_width  pct_change_vs_prev
+ 50        0.14324          0.14116                 NaN
+100        0.15024          0.14819             4.88591
+200        0.15357          0.15241             2.21364
+300        0.15562          0.15433             1.33887
+400        0.15587          0.15489             0.16118
+500        0.15631          0.15457             0.27876
+  figure -> 01_convergence.png

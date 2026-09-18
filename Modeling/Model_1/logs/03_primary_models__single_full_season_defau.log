@@ -1,0 +1,15 @@
+== 03 — Primary models — single full-season, default feature set
+  data   -> data/03_primary.csv
+               model            role  holdout_auc  auc_ci_lo  auc_ci_hi  accuracy  brier  log_loss    ece  cv_val_auc  cv_train_auc  overfit_gap  lift_vs_market
+                  LR          single       0.6982     0.6536     0.7398    0.6494 0.2194    0.6258 0.0622      0.7360        0.7309      -0.0052         -0.0205
+                 GBM          single       0.6964     0.6518     0.7393    0.6531 0.2199    0.6293 0.0684      0.7207        0.7714       0.0507         -0.0224
+                  RF          single       0.7047     0.6608     0.7458    0.6531 0.2186    0.6264 0.0625      0.7266        0.7580       0.0315         -0.0140
+           SimpleAvg      PRODUCTION       0.7007     0.6562     0.7425    0.6550 0.2188    0.6261 0.0691         NaN           NaN          NaN         -0.0180
+             Stacked comparison-only       0.7002     0.6565     0.7416    0.6494 0.2246    0.6386 0.0780         NaN           NaN          NaN         -0.0185
+MARKET (spread only)       benchmark       0.7187     0.6756     0.7595    0.6531 0.2123    0.6094 0.0348         NaN           NaN          NaN          0.0000
+
+Selected hyperparameters:
+  LR: {'thresh__mode': 'binary', 'clf__C': 0.03, 'clf__l1_ratio': 0.5}
+  GBM: {'clf__max_depth': 2, 'clf__learning_rate': 0.02, 'clf__min_samples_leaf': 80, 'clf__l2_regularization': 10.0, 'clf__max_features': 0.7}
+  RF: {'clf__max_depth': 4, 'clf__min_samples_leaf': 50, 'clf__max_features': 0.6, 'clf__max_samples': 0.7}
+  figure -> 03_primary.png

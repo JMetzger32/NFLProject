@@ -1,0 +1,20 @@
+== 01 — Setup, benchmark, thresholds
+  data   -> data/01_setup.csv
+              weeks  full_features  train_rows  test_rows  spread_only_auc  expected  always_pick_favorite_accuracy
+1-18 (single model)             29        2168        542          0.71874    0.7187                       0.653137
+
+Sanity gate PASSED: spread-only reproduces the 0.7187 full-season benchmark.
+  data   -> data/01_thresholds.csv
+
+Thresholds (training years only):
+                     feature  univariate_auc  stump_threshold  youden_threshold           shape
+                 team_spread        0.725554        -1.250000         -1.000000 monotone->hinge
+              qb_epa_r8_diff        0.635466        -0.025299          0.024872 monotone->hinge
+        off_epa_play_r4_diff        0.629982        -0.011467          0.011177 monotone->hinge
+off_points_per_drive_r4_diff        0.626313         0.001501         -0.001768 monotone->hinge
+              qb_epa_r4_diff        0.613018        -0.072778          0.072640 monotone->hinge
+             off_epa_play_r8        0.606835         0.025762          0.017008 monotone->hinge
+             qb_cpoe_r4_diff        0.605807        -2.323775          2.313050 monotone->hinge
+      off_yards_per_drive_r8        0.602317        32.889103         32.888889 monotone->hinge
+              off_success_r4        0.600663         0.453513          0.453488 monotone->hinge
+                   qb_epa_r8        0.597342        -0.034679          0.046545 monotone->hinge

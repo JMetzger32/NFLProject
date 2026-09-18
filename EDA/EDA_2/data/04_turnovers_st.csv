@@ -1,0 +1,11 @@
+feature,auc,lower_is_better,n
+st_epa_r4,0.49655762956255567,False,2550
+st_epa_r8,0.49761568480780305,False,2550
+off_turnover_rate_r8,0.5045145740958549,True,2550
+off_avg_start_field_pos_r4,0.5075761676746898,True,2550
+off_turnover_rate_r4,0.508209155376643,True,2550
+off_avg_start_field_pos_r8,0.5085256492276197,True,2550
+turnover_margin_rate_r4,0.5328587668489146,False,2550
+turnover_margin_rate_r8,0.5366486961314547,False,2550
+def_takeaway_rate_r4,0.5561202959601974,False,2550
+def_takeaway_rate_r8,0.559546057390885,False,2550

@@ -1,0 +1,6 @@
+== 01 — Target and market baselines
+team-game rows: 2,710   overall win rate: 0.5000
+home win rate:      0.5410
+favorite win rate:  0.6664  <- the bar to beat
+  data   -> data/01_baselines.csv
+  figure -> 01_baselines.png

@@ -1,0 +1,22 @@
+== 09 — Correlation and mutual information
+complete-case rows for the matrix: 2,290
+  data   -> data/09_correlation_matrix.csv
+  data   -> data/09_mutual_info.csv
+                     feature  mutual_info  abs_corr_with_won
+        team_ml_implied_prob     0.085206           0.407404
+                 team_spread     0.080807           0.406422
+              qb_epa_r8_diff     0.049120           0.240647
+             off_epa_play_r8     0.035007           0.181210
+               qb_success_r4     0.030465           0.161442
+             off_epa_play_r4     0.028373           0.167077
+              qb_epa_r4_diff     0.023850           0.212393
+off_points_per_drive_r4_diff     0.023824           0.230673
+              off_success_r4     0.023657           0.177082
+                   qb_epa_r8     0.021364           0.171151
+                 off_cpoe_r4     0.019498           0.141785
+                  qb_cpoe_r4     0.016427           0.138362
+             qb_cpoe_r4_diff     0.015935           0.192392
+                  total_line     0.014580           0.000000
+     def_epa_allowed_r4_diff     0.013916           0.120827
+  figure -> 09_correlation.png
+  figure -> 09_mutual_info.png

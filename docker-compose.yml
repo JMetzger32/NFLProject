@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: nflproject-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-nfl}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-nfl}
+      POSTGRES_DB: ${POSTGRES_DB:-nfl}
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - nfl_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-nfl} -d ${POSTGRES_DB:-nfl}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  nfl_pgdata:

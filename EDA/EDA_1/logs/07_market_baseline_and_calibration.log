@@ -1,0 +1,5 @@
+== 07 — Market baseline and calibration
+  data   -> data/07_market_calibration.csv
+closing spread AUC: 0.7241
+moneyline implied prob AUC: 0.7241
+  figure -> 07_market_calibration.png

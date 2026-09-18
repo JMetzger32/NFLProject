@@ -1,0 +1,4 @@
+interaction,own_component,own_auc,opp_component,opp_auc,interaction_auc
+rush_matchup_z,off_rush_rate_r4,0.5306153206399512,opp_def_rush_epa_allowed_r4,0.530159495676737,0.4958566327146726
+pass_matchup_z,off_pass_rate_r4,0.4698275862068966,opp_def_pass_epa_allowed_r4,0.5323838722853501,0.4981399515487876
+mobility_pressure_z,qb_scramble_rate_r4,0.49325951142453606,opp_def_pressure_rate_r4,0.4669425402184023,0.500178673087397

@@ -1,0 +1,23 @@
+== 06 — Verdict — full-set reference and final answer
+  data   -> data/06_all_results.csv
+ALL RESULTS (2025 holdout, 542 rows):
+        features                model            role  n_features  holdout_auc  auc_ci_lo  auc_ci_hi  accuracy  brier  log_loss    ece  lift_vs_market
+reduced(DEFAULT)                   LR          single          22       0.6982     0.6536     0.7398    0.6494 0.2194    0.6258 0.0622         -0.0205
+reduced(DEFAULT)                  GBM          single          22       0.6964     0.6518     0.7393    0.6531 0.2199    0.6293 0.0684         -0.0224
+reduced(DEFAULT)                   RF          single          22       0.7047     0.6608     0.7458    0.6531 0.2186    0.6264 0.0625         -0.0140
+reduced(DEFAULT)            SimpleAvg      PRODUCTION          22       0.7007     0.6562     0.7425    0.6550 0.2188    0.6261 0.0691         -0.0180
+reduced(DEFAULT)              Stacked comparison-only          22       0.7002     0.6565     0.7416    0.6494 0.2246    0.6386 0.0780         -0.0185
+reduced(DEFAULT) MARKET (spread only)       benchmark          22       0.7187     0.6756     0.7595    0.6531 0.2123    0.6094 0.0348          0.0000
+ full(reference)                   LR          single          29       0.7108     0.6662     0.7521    0.6550 0.2149    0.6161 0.0661         -0.0080
+ full(reference)                  GBM          single          29       0.6924     0.6478     0.7348    0.6513 0.2210    0.6315 0.0657         -0.0264
+ full(reference)                   RF          single          29       0.7058     0.6616     0.7471    0.6531 0.2183    0.6257 0.0601         -0.0129
+ full(reference)            SimpleAvg      PRODUCTION          29       0.7057     0.6619     0.7474    0.6550 0.2175    0.6234 0.0600         -0.0131
+ full(reference)              Stacked comparison-only          29       0.7082     0.6648     0.7496    0.6531 0.2218    0.6320 0.0818         -0.0105
+ full(reference) MARKET (spread only)       benchmark          29       0.7187     0.6756     0.7595    0.6531 0.2123    0.6094 0.0348          0.0000
+
+Configurations beating the benchmark: 0 of 10
+  None. Every configuration underperforms the closing spread alone.
+
+PRODUCTION model:
+ holdout_auc  auc_ci_lo  auc_ci_hi  accuracy  brier  benchmark  lift_vs_market
+      0.7007     0.6562     0.7425     0.655 0.2188     0.7187          -0.018

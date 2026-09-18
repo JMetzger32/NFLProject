@@ -1,0 +1,365 @@
+{
+  "season": 2025,
+  "week": 5,
+  "generated_at": "2026-09-18T04:47:37.573936+00:00",
+  "model_version": "model_1_bagged_v1",
+  "devig_method": "shin",
+  "status": "picks_available",
+  "games_evaluated": 14,
+  "team_rows_evaluated": 28,
+  "qualifying_picks": 4,
+  "insufficient_history": false,
+  "notes": "",
+  "picks": [
+    {
+      "game_id": "2025_05_NE_BUF",
+      "team": "NE",
+      "opponent": "BUF",
+      "is_home": false,
+      "model_prob": 0.3402,
+      "ci": [
+        0.2553,
+        0.4148
+      ],
+      "market_prob_devig": 0.223,
+      "edge": 0.1172,
+      "ev_dollars": 3.95,
+      "moneyline": 310,
+      "stake": 10.0,
+      "confidence": "strong edge"
+    },
+    {
+      "game_id": "2025_05_MIA_CAR",
+      "team": "MIA",
+      "opponent": "CAR",
+      "is_home": false,
+      "model_prob": 0.6486,
+      "ci": [
+        0.5669,
+        0.7247
+      ],
+      "market_prob_devig": 0.5227,
+      "edge": 0.1258,
+      "ev_dollars": 1.89,
+      "moneyline": -120,
+      "stake": 10.0,
+      "confidence": "strong edge"
+    },
+    {
+      "game_id": "2025_05_DAL_NYJ",
+      "team": "NYJ",
+      "opponent": "DAL",
+      "is_home": true,
+      "model_prob": 0.6219,
+      "ci": [
+        0.5634,
+        0.6878
+      ],
+      "market_prob_devig": 0.5113,
+      "edge": 0.1105,
+      "ev_dollars": 1.63,
+      "moneyline": -115,
+      "stake": 10.0,
+      "confidence": "strong edge"
+    },
+    {
+      "game_id": "2025_05_NYG_NO",
+      "team": "NO",
+      "opponent": "NYG",
+      "is_home": true,
+      "model_prob": 0.6203,
+      "ci": [
+        0.5609,
+        0.6784
+      ],
+      "market_prob_devig": 0.5227,
+      "edge": 0.0976,
+      "ev_dollars": 1.37,
+      "moneyline": -120,
+      "stake": 10.0,
+      "confidence": "moderate edge"
+    }
+  ],
+  "all_games": [
+    {
+      "game_id": "2025_05_DAL_NYJ",
+      "team": "DAL",
+      "opponent": "NYJ",
+      "model_prob": 0.4504,
+      "market_prob_devig": 0.4887,
+      "edge": -0.0383,
+      "qualifies": false,
+      "reason": "insufficient history (3 games, need 4)"
+    },
+    {
+      "game_id": "2025_05_DAL_NYJ",
+      "team": "NYJ",
+      "opponent": "DAL",
+      "model_prob": 0.6219,
+      "market_prob_devig": 0.5113,
+      "edge": 0.1105,
+      "qualifies": true,
+      "reason": "qualifies: CI entirely above market probability"
+    },
+    {
+      "game_id": "2025_05_DEN_PHI",
+      "team": "DEN",
+      "opponent": "PHI",
+      "model_prob": 0.2751,
+      "market_prob_devig": 0.3358,
+      "edge": -0.0607,
+      "qualifies": false,
+      "reason": "CI [0.223, 0.347] contains market 0.336"
+    },
+    {
+      "game_id": "2025_05_DEN_PHI",
+      "team": "PHI",
+      "opponent": "DEN",
+      "model_prob": 0.6521,
+      "market_prob_devig": 0.6642,
+      "edge": -0.0121,
+      "qualifies": false,
+      "reason": "CI [0.576, 0.716] contains market 0.664"
+    },
+    {
+      "game_id": "2025_05_DET_CIN",
+      "team": "CIN",
+      "opponent": "DET",
+      "model_prob": 0.2046,
+      "market_prob_devig": 0.1693,
+      "edge": 0.0353,
+      "qualifies": false,
+      "reason": "CI [0.144, 0.269] contains market 0.169"
+    },
+    {
+      "game_id": "2025_05_DET_CIN",
+      "team": "DET",
+      "opponent": "CIN",
+      "model_prob": 0.7646,
+      "market_prob_devig": 0.8307,
+      "edge": -0.0661,
+      "qualifies": false,
+      "reason": "CI [0.684, 0.832] contains market 0.831"
+    },
+    {
+      "game_id": "2025_05_HOU_BAL",
+      "team": "BAL",
+      "opponent": "HOU",
+      "model_prob": 0.4698,
+      "market_prob_devig": 0.4248,
+      "edge": 0.045,
+      "qualifies": false,
+      "reason": "CI [0.387, 0.552] contains market 0.425"
+    },
+    {
+      "game_id": "2025_05_HOU_BAL",
+      "team": "HOU",
+      "opponent": "BAL",
+      "model_prob": 0.4904,
+      "market_prob_devig": 0.5752,
+      "edge": -0.0848,
+      "qualifies": false,
+      "reason": "model rates team BELOW market (bet is on the opponent, not here)"
+    },
+    {
+      "game_id": "2025_05_KC_JAX",
+      "team": "JAX",
+      "opponent": "KC",
+      "model_prob": 0.3415,
+      "market_prob_devig": 0.3572,
+      "edge": -0.0157,
+      "qualifies": false,
+      "reason": "CI [0.278, 0.406] contains market 0.357"
+    },
+    {
+      "game_id": "2025_05_KC_JAX",
+      "team": "KC",
+      "opponent": "JAX",
+      "model_prob": 0.66,
+      "market_prob_devig": 0.6428,
+      "edge": 0.0171,
+      "qualifies": false,
+      "reason": "CI [0.605, 0.716] contains market 0.643"
+    },
+    {
+      "game_id": "2025_05_LV_IND",
+      "team": "IND",
+      "opponent": "LV",
+      "model_prob": 0.7094,
+      "market_prob_devig": 0.7614,
+      "edge": -0.052,
+      "qualifies": false,
+      "reason": "CI [0.630, 0.785] contains market 0.761"
+    },
+    {
+      "game_id": "2025_05_LV_IND",
+      "team": "LV",
+      "opponent": "IND",
+      "model_prob": 0.3058,
+      "market_prob_devig": 0.2386,
+      "edge": 0.0672,
+      "qualifies": false,
+      "reason": "CI [0.237, 0.388] contains market 0.239"
+    },
+    {
+      "game_id": "2025_05_MIA_CAR",
+      "team": "CAR",
+      "opponent": "MIA",
+      "model_prob": 0.3719,
+      "market_prob_devig": 0.4773,
+      "edge": -0.1054,
+      "qualifies": false,
+      "reason": "model rates team BELOW market (bet is on the opponent, not here)"
+    },
+    {
+      "game_id": "2025_05_MIA_CAR",
+      "team": "MIA",
+      "opponent": "CAR",
+      "model_prob": 0.6486,
+      "market_prob_devig": 0.5227,
+      "edge": 0.1258,
+      "qualifies": true,
+      "reason": "qualifies: CI entirely above market probability"
+    },
+    {
+      "game_id": "2025_05_MIN_CLE",
+      "team": "CLE",
+      "opponent": "MIN",
+      "model_prob": 0.3139,
+      "market_prob_devig": 0.3572,
+      "edge": -0.0432,
+      "qualifies": false,
+      "reason": "CI [0.246, 0.374] contains market 0.357"
+    },
+    {
+      "game_id": "2025_05_MIN_CLE",
+      "team": "MIN",
+      "opponent": "CLE",
+      "model_prob": 0.6375,
+      "market_prob_devig": 0.6428,
+      "edge": -0.0053,
+      "qualifies": false,
+      "reason": "CI [0.564, 0.723] contains market 0.643"
+    },
+    {
+      "game_id": "2025_05_NE_BUF",
+      "team": "BUF",
+      "opponent": "NE",
+      "model_prob": 0.6823,
+      "market_prob_devig": 0.777,
+      "edge": -0.0947,
+      "qualifies": false,
+      "reason": "model rates team BELOW market (bet is on the opponent, not here)"
+    },
+    {
+      "game_id": "2025_05_NE_BUF",
+      "team": "NE",
+      "opponent": "BUF",
+      "model_prob": 0.3402,
+      "market_prob_devig": 0.223,
+      "edge": 0.1172,
+      "qualifies": true,
+      "reason": "qualifies: CI entirely above market probability"
+    },
+    {
+      "game_id": "2025_05_NYG_NO",
+      "team": "NO",
+      "opponent": "NYG",
+      "model_prob": 0.6203,
+      "market_prob_devig": 0.5227,
+      "edge": 0.0976,
+      "qualifies": true,
+      "reason": "qualifies: CI entirely above market probability"
+    },
+    {
+      "game_id": "2025_05_NYG_NO",
+      "team": "NYG",
+      "opponent": "NO",
+      "model_prob": 0.3722,
+      "market_prob_devig": 0.4773,
+      "edge": -0.1051,
+      "qualifies": false,
+      "reason": "model rates team BELOW market (bet is on the opponent, not here)"
+    },
+    {
+      "game_id": "2025_05_SF_LA",
+      "team": "LA",
+      "opponent": "SF",
+      "model_prob": 0.7415,
+      "market_prob_devig": 0.7938,
+      "edge": -0.0522,
+      "qualifies": false,
+      "reason": "CI [0.664, 0.808] contains market 0.794"
+    },
+    {
+      "game_id": "2025_05_SF_LA",
+      "team": "SF",
+      "opponent": "LA",
+      "model_prob": 0.2626,
+      "market_prob_devig": 0.2062,
+      "edge": 0.0564,
+      "qualifies": false,
+      "reason": "CI [0.183, 0.338] contains market 0.206"
+    },
+    {
+      "game_id": "2025_05_TB_SEA",
+      "team": "SEA",
+      "opponent": "TB",
+      "model_prob": 0.6048,
+      "market_prob_devig": 0.6214,
+      "edge": -0.0167,
+      "qualifies": false,
+      "reason": "CI [0.529, 0.670] contains market 0.621"
+    },
+    {
+      "game_id": "2025_05_TB_SEA",
+      "team": "TB",
+      "opponent": "SEA",
+      "model_prob": 0.3092,
+      "market_prob_devig": 0.3786,
+      "edge": -0.0694,
+      "qualifies": false,
+      "reason": "model rates team BELOW market (bet is on the opponent, not here)"
+    },
+    {
+      "game_id": "2025_05_TEN_ARI",
+      "team": "ARI",
+      "opponent": "TEN",
+      "model_prob": 0.726,
+      "market_prob_devig": 0.7885,
+      "edge": -0.0625,
+      "qualifies": false,
+      "reason": "CI [0.644, 0.792] contains market 0.788"
+    },
+    {
+      "game_id": "2025_05_TEN_ARI",
+      "team": "TEN",
+      "opponent": "ARI",
+      "model_prob": 0.2739,
+      "market_prob_devig": 0.2115,
+      "edge": 0.0624,
+      "qualifies": false,
+      "reason": "CI [0.210, 0.352] contains market 0.212"
+    },
+    {
+      "game_id": "2025_05_WAS_LAC",
+      "team": "LAC",
+      "opponent": "WAS",
+      "model_prob": 0.5225,
+      "market_prob_devig": 0.5865,
+      "edge": -0.064,
+      "qualifies": false,
+      "reason": "CI [0.444, 0.618] contains market 0.587"
+    },
+    {
+      "game_id": "2025_05_WAS_LAC",
+      "team": "WAS",
+      "opponent": "LAC",
+      "model_prob": 0.4718,
+      "market_prob_devig": 0.4135,
+      "edge": 0.0583,
+      "qualifies": false,
+      "reason": "CI [0.401, 0.553] contains market 0.413"
+    }
+  ]
+}

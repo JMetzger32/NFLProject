@@ -1,0 +1,5 @@
+feature,auc,n
+roster_continuity_score,0.6041402594557376,1430
+coach_tenure_weeks,0.5341269862883131,2710
+coach_tenure_censored,0.5402214022140222,2710
+division_familiarity,0.5,2710

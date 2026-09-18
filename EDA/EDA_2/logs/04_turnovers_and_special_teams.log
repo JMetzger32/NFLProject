@@ -1,0 +1,14 @@
+== 04 — Turnovers and special teams
+  figure -> 04_turnovers_st.png
+  data   -> data/04_turnovers_st.csv
+                   feature      auc  lower_is_better    n
+                 st_epa_r4 0.496558            False 2550
+                 st_epa_r8 0.497616            False 2550
+      off_turnover_rate_r8 0.504515             True 2550
+off_avg_start_field_pos_r4 0.507576             True 2550
+      off_turnover_rate_r4 0.508209             True 2550
+off_avg_start_field_pos_r8 0.508526             True 2550
+   turnover_margin_rate_r4 0.532859            False 2550
+   turnover_margin_rate_r8 0.536649            False 2550
+      def_takeaway_rate_r4 0.556120            False 2550
+      def_takeaway_rate_r8 0.559546            False 2550

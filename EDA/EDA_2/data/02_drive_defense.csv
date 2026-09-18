@@ -1,0 +1,9 @@
+feature,auc,lower_is_better,n
+def_explosive_play_rate_allowed_r8,0.45690547137591475,True,2550
+def_explosive_play_rate_allowed_r4,0.46384895892285055,True,2550
+def_red_zone_td_rate_allowed_r4,0.47944786108291887,True,2547
+def_red_zone_td_rate_allowed_r8,0.4853764516260308,True,2547
+def_3d_stop_rate_r8,0.49661391564100926,False,2550
+def_penalty_yards_per_game_r4,0.49942575897009395,True,2550
+def_penalty_yards_per_game_r8,0.5016107660812095,True,2550
+def_3d_stop_rate_r4,0.5068373744482119,False,2550

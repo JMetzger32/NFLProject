@@ -1,0 +1,13 @@
+== 06 — Situational context
+  data   -> data/06_situational.csv
+         feature      auc  win_rate_high  win_rate_low
+         is_home 0.540959       0.540959      0.459041
+        tz_shift 0.510945       0.491358      0.501518
+      short_week 0.509963       0.532847      0.494128
+       rest_days 0.500892       0.521179      0.494693
+games_of_history 0.500264       0.500787      0.499306
+        div_game 0.500000       0.500000      0.500000
+         is_dome 0.500000       0.500000      0.500000
+            wind 0.500000       0.500000      0.500000
+    travel_miles 0.466406       0.458980      0.540899
+  figure -> 06_situational.png

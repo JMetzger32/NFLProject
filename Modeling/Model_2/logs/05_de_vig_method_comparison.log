@@ -1,0 +1,9 @@
+== 05 — De-vig method comparison
+  data   -> data/05_devig.csv
+games 1,371; mean overround 1.0369 (3.69% book margin)
+               method   brier  log_loss  mean_overround
+         proportional 0.21176   0.61098         1.03695
+                 shin 0.21171   0.61073         1.03695
+RAW (skipping de-vig) 0.21230   0.61162         1.03695
+
+Default in use: shin

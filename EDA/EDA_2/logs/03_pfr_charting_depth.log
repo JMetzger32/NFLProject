@@ -1,0 +1,12 @@
+== 03 — PFR charting depth
+  figure -> 03_pfr_depth.png
+  data   -> data/03_pfr_depth.csv
+                          feature      auc  lower_is_better    n
+             qb_bad_throw_rate_r4 0.464364             True 2550
+             qb_bad_throw_rate_r8 0.466195             True 2550
+def_broken_tackle_rate_allowed_r4 0.491160             True 2550
+def_broken_tackle_rate_allowed_r8 0.505872             True 2550
+                 off_drop_rate_r4 0.508285             True 2550
+                 off_drop_rate_r8 0.510327             True 2550
+              qb_time_to_throw_r8 0.518405            False 2470
+              qb_time_to_throw_r4 0.525578            False 2470

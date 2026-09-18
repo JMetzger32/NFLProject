@@ -1,0 +1,16 @@
+# Data source: nflreadpy is nflverse's actively-maintained Python client.
+# (nfl_data_py, the older client, pins pandas<2.0 / numpy<2.0 and would block
+# modern scikit-learn/xgboost during the modeling phase.)
+nflreadpy>=0.1.5
+polars>=1.0
+pandas>=2.1
+pyarrow>=14.0
+SQLAlchemy>=2.0
+psycopg2-binary>=2.9
+python-dotenv>=1.0
+
+# Analysis / EDA / modeling
+matplotlib>=3.8
+scikit-learn>=1.4
+scipy>=1.11
+statsmodels>=0.14   # variance_inflation_factor for the collinearity diagnostics

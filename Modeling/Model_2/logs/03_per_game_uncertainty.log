@@ -1,0 +1,7 @@
+== 03 — Per-game uncertainty
+  data   -> data/03_ci_widths.csv
+ mean_ci_width  median   p10    p90    min    max  mean_half_width
+        0.1563  0.1546 0.123 0.1909 0.0839 0.2485           0.0782
+
+A pick needs the CI to clear the market probability entirely, so the edge must exceed roughly 0.078 — that is the bar the filter sets.
+  figure -> 03_ci_widths.png

@@ -1,0 +1,49 @@
+== 01 — Univariate — all EDA_2 candidates
+  data   -> data/01_univariate.csv
+                           feature    n      auc  lower_is_better  auc_oriented  std_mean_diff
+           roster_continuity_score 1430 0.604140            False      0.604140       0.358093
+            off_yards_per_drive_r8 2550 0.597534            False      0.597534       0.328144
+            off_yards_per_drive_r4 2550 0.585551            False      0.585551       0.301534
+                    off_3d_rate_r8 2550 0.567367            False      0.567367       0.216932
+                    off_3d_rate_r4 2550 0.560510            False      0.560510       0.196214
+        off_explosive_play_rate_r8 2550 0.559861            False      0.559861       0.188092
+              def_takeaway_rate_r8 2550 0.559546            False      0.559546       0.194824
+              def_takeaway_rate_r4 2550 0.556120            False      0.556120       0.188938
+        off_explosive_play_rate_r4 2550 0.548457            False      0.548457       0.169066
+def_explosive_play_rate_allowed_r8 2550 0.456905             True      0.543095      -0.132340
+             coach_tenure_censored 2710 0.540221            False      0.540221       0.163620
+           turnover_margin_rate_r8 2550 0.536649            False      0.536649       0.114165
+def_explosive_play_rate_allowed_r4 2550 0.463849             True      0.536151      -0.116105
+              qb_bad_throw_rate_r4 2550 0.464364             True      0.535636      -0.129475
+            off_plays_per_drive_r4 2550 0.534332            False      0.534332       0.129493
+                coach_tenure_weeks 2710 0.534127            False      0.534127       0.106942
+              qb_bad_throw_rate_r8 2550 0.466195             True      0.533805      -0.118777
+           turnover_margin_rate_r4 2550 0.532859            False      0.532859       0.107793
+            off_plays_per_drive_r8 2550 0.532489            False      0.532489       0.128370
+               qb_time_to_throw_r4 2470 0.525578            False      0.525578       0.064474
+   def_red_zone_td_rate_allowed_r4 2547 0.479448             True      0.520552      -0.051655
+           off_red_zone_td_rate_r8 2548 0.520065            False      0.520065       0.057322
+               qb_time_to_throw_r8 2470 0.518405            False      0.518405       0.047479
+   def_red_zone_td_rate_allowed_r8 2547 0.485376             True      0.514624      -0.020754
+ def_broken_tackle_rate_allowed_r4 2550 0.491160             True      0.508840      -0.040986
+           off_red_zone_td_rate_r4 2548 0.508725            False      0.508725       0.028982
+               def_3d_stop_rate_r4 2550 0.506837            False      0.506837      -0.001489
+     def_penalty_yards_per_game_r4 2550 0.499426             True      0.500574      -0.006420
+               mobility_pressure_z 2548 0.500179            False      0.500179      -0.011437
+              division_familiarity 2710 0.500000            False      0.500000       0.000000
+     off_penalty_yards_per_game_r8 2550 0.501383             True      0.498617      -0.001911
+     def_penalty_yards_per_game_r8 2550 0.501611             True      0.498389      -0.008446
+                    pass_matchup_z 2548 0.498140            False      0.498140      -0.010055
+                         st_epa_r8 2550 0.497616            False      0.497616      -0.013675
+               def_3d_stop_rate_r8 2550 0.496614            False      0.496614      -0.040693
+                         st_epa_r4 2550 0.496558            False      0.496558      -0.013817
+                    rush_matchup_z 2548 0.495857            False      0.495857      -0.026291
+              off_turnover_rate_r8 2550 0.504515             True      0.495485       0.026575
+ def_broken_tackle_rate_allowed_r8 2550 0.505872             True      0.494128      -0.000465
+        off_avg_start_field_pos_r4 2550 0.507576             True      0.492424       0.024910
+              off_turnover_rate_r4 2550 0.508209             True      0.491791       0.028571
+                  off_drop_rate_r4 2550 0.508285             True      0.491715       0.022119
+        off_avg_start_field_pos_r8 2550 0.508526             True      0.491474       0.022569
+     off_penalty_yards_per_game_r4 2550 0.509929             True      0.490071       0.018791
+                  off_drop_rate_r8 2550 0.510327             True      0.489673       0.013437
+  figure -> 01_univariate.png

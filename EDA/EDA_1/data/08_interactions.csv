@@ -1,0 +1,19 @@
+interaction,a_tercile,b_tercile,win_rate
+Mobile QB vs pressure defense,low,low,0.5681818181818182
+Mobile QB vs pressure defense,low,mid,0.5266903914590747
+Mobile QB vs pressure defense,low,high,0.4852459016393443
+Mobile QB vs pressure defense,mid,low,0.4827586206896552
+Mobile QB vs pressure defense,mid,mid,0.4861111111111111
+Mobile QB vs pressure defense,mid,high,0.41697416974169743
+Mobile QB vs pressure defense,high,low,0.5506756756756757
+Mobile QB vs pressure defense,high,mid,0.5071428571428571
+Mobile QB vs pressure defense,high,high,0.47619047619047616
+Run-heavy offense vs weak run defense,low,low,0.5105633802816901
+Run-heavy offense vs weak run defense,low,mid,0.5602836879432624
+Run-heavy offense vs weak run defense,low,high,0.5387323943661971
+Run-heavy offense vs weak run defense,mid,low,0.40808823529411764
+Run-heavy offense vs weak run defense,mid,mid,0.5236486486486487
+Run-heavy offense vs weak run defense,mid,high,0.5266903914590747
+Run-heavy offense vs weak run defense,high,low,0.45918367346938777
+Run-heavy offense vs weak run defense,high,mid,0.4944649446494465
+Run-heavy offense vs weak run defense,high,high,0.4753521126760563

@@ -1,0 +1,15 @@
+== 05 — Injuries and roster churn
+  data   -> data/05_injuries.csv
+win rate by QBs listed Out/Doubtful:
+            size      mean
+inj_qb_out                
+0           2499  0.512605
+1            205  0.346341
+2              6  0.500000
+
+win rate by new-starter flag:
+                   size      mean
+qb_is_new_starter                
+0                  2550  0.500392
+1                   160  0.493750
+  figure -> 05_injuries.png

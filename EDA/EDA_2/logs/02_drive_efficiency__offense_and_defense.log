@@ -1,0 +1,27 @@
+== 02 — Drive efficiency — offense and defense
+  figure -> 02_drive_offense.png
+  data   -> data/02_drive_offense.csv
+                      feature      auc  lower_is_better    n
+off_penalty_yards_per_game_r8 0.501383             True 2550
+      off_red_zone_td_rate_r4 0.508725            False 2548
+off_penalty_yards_per_game_r4 0.509929             True 2550
+      off_red_zone_td_rate_r8 0.520065            False 2548
+       off_plays_per_drive_r8 0.532489            False 2550
+       off_plays_per_drive_r4 0.534332            False 2550
+   off_explosive_play_rate_r4 0.548457            False 2550
+   off_explosive_play_rate_r8 0.559861            False 2550
+               off_3d_rate_r4 0.560510            False 2550
+               off_3d_rate_r8 0.567367            False 2550
+       off_yards_per_drive_r4 0.585551            False 2550
+       off_yards_per_drive_r8 0.597534            False 2550
+  figure -> 02_drive_defense.png
+  data   -> data/02_drive_defense.csv
+                           feature      auc  lower_is_better    n
+def_explosive_play_rate_allowed_r8 0.456905             True 2550
+def_explosive_play_rate_allowed_r4 0.463849             True 2550
+   def_red_zone_td_rate_allowed_r4 0.479448             True 2547
+   def_red_zone_td_rate_allowed_r8 0.485376             True 2547
+               def_3d_stop_rate_r8 0.496614            False 2550
+     def_penalty_yards_per_game_r4 0.499426             True 2550
+     def_penalty_yards_per_game_r8 0.501611             True 2550
+               def_3d_stop_rate_r4 0.506837            False 2550

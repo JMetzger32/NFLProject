@@ -1,0 +1,8 @@
+== 03 — QB delta — the headline feature
+  data   -> data/03_qb_delta_bins.csv
+qb_epa_r4_diff: AUC 0.6133 on 2,548 rows
+  for comparison qb_epa_r8_diff         AUC 0.6363
+  for comparison qb_epa_r4              AUC 0.5830
+  for comparison qb_cpoe_r4_diff        AUC 0.6009
+  for comparison team_spread            AUC 0.7241
+  figure -> 03_qb_delta.png

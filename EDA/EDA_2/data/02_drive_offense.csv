@@ -1,0 +1,13 @@
+feature,auc,lower_is_better,n
+off_penalty_yards_per_game_r8,0.5013831611738016,True,2550
+off_red_zone_td_rate_r4,0.5087254131817692,False,2548
+off_penalty_yards_per_game_r4,0.5099294178727676,True,2550
+off_red_zone_td_rate_r8,0.5200653081342513,False,2548
+off_plays_per_drive_r8,0.5324890626614764,False,2550
+off_plays_per_drive_r4,0.5343320472630817,False,2550
+off_explosive_play_rate_r4,0.5484573923613333,False,2550
+off_explosive_play_rate_r8,0.5598610133708656,False,2550
+off_3d_rate_r4,0.5605099949311771,False,2550
+off_3d_rate_r8,0.5673667465539387,False,2550
+off_yards_per_drive_r4,0.5855514559332293,False,2550
+off_yards_per_drive_r8,0.5975339315856557,False,2550

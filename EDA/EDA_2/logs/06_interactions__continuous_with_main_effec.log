@@ -1,0 +1,9 @@
+== 06 — Interactions — continuous, with main effects reported alongside
+  figure -> 06_interactions.png
+  data   -> data/06_interactions.csv
+        interaction       own_component  own_auc               opp_component  opp_auc  interaction_auc
+     rush_matchup_z    off_rush_rate_r4 0.530615 opp_def_rush_epa_allowed_r4 0.530159         0.495857
+     pass_matchup_z    off_pass_rate_r4 0.469828 opp_def_pass_epa_allowed_r4 0.532384         0.498140
+mobility_pressure_z qb_scramble_rate_r4 0.493260    opp_def_pressure_rate_r4 0.466943         0.500179
+
+Verdict rule: an interaction earns its keep only if interaction_auc exceeds BOTH main-effect AUCs — otherwise it's redundant with a main effect.

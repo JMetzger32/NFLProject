@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- NFLProject-specific ---
+pgdata/          # local Postgres cluster (2.3 GB)
+data/raw/        # cached parquet/csv pulls
+Betting/output/*.csv
+.DS_Store

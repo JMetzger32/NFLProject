@@ -1,0 +1,336 @@
+{
+  "season": 2025,
+  "week": 3,
+  "generated_at": "2026-09-18T04:44:10.402599+00:00",
+  "model_version": "model_1_bagged_v1",
+  "devig_method": "shin",
+  "status": "no_qualifying_edge",
+  "games_evaluated": 16,
+  "team_rows_evaluated": 32,
+  "qualifying_picks": 0,
+  "insufficient_history": true,
+  "notes": "Only 2 game(s) of in-season history; rolling features are near-empty this early and no edge should be expected.",
+  "picks": [],
+  "all_games": [
+    {
+      "game_id": "2025_03_ARI_SF",
+      "team": "ARI",
+      "opponent": "SF",
+      "model_prob": 0.3394,
+      "market_prob_devig": 0.4661,
+      "edge": -0.1267,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_ARI_SF",
+      "team": "SF",
+      "opponent": "ARI",
+      "model_prob": 0.6393,
+      "market_prob_devig": 0.5339,
+      "edge": 0.1054,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_ATL_CAR",
+      "team": "ATL",
+      "opponent": "CAR",
+      "model_prob": 0.618,
+      "market_prob_devig": 0.6707,
+      "edge": -0.0527,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_ATL_CAR",
+      "team": "CAR",
+      "opponent": "ATL",
+      "model_prob": 0.3556,
+      "market_prob_devig": 0.3293,
+      "edge": 0.0264,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_CIN_MIN",
+      "team": "CIN",
+      "opponent": "MIN",
+      "model_prob": 0.3666,
+      "market_prob_devig": 0.4027,
+      "edge": -0.0361,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_CIN_MIN",
+      "team": "MIN",
+      "opponent": "CIN",
+      "model_prob": 0.6157,
+      "market_prob_devig": 0.5973,
+      "edge": 0.0184,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_DAL_CHI",
+      "team": "CHI",
+      "opponent": "DAL",
+      "model_prob": 0.3941,
+      "market_prob_devig": 0.4661,
+      "edge": -0.072,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_DAL_CHI",
+      "team": "DAL",
+      "opponent": "CHI",
+      "model_prob": 0.568,
+      "market_prob_devig": 0.5339,
+      "edge": 0.0341,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_DEN_LAC",
+      "team": "DEN",
+      "opponent": "LAC",
+      "model_prob": 0.3766,
+      "market_prob_devig": 0.4135,
+      "edge": -0.0368,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_DEN_LAC",
+      "team": "LAC",
+      "opponent": "DEN",
+      "model_prob": 0.5746,
+      "market_prob_devig": 0.5865,
+      "edge": -0.0119,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_DET_BAL",
+      "team": "BAL",
+      "opponent": "DET",
+      "model_prob": 0.5991,
+      "market_prob_devig": 0.6884,
+      "edge": -0.0893,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_DET_BAL",
+      "team": "DET",
+      "opponent": "BAL",
+      "model_prob": 0.4088,
+      "market_prob_devig": 0.3116,
+      "edge": 0.0972,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_GB_CLE",
+      "team": "CLE",
+      "opponent": "GB",
+      "model_prob": 0.2425,
+      "market_prob_devig": 0.1964,
+      "edge": 0.0461,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_GB_CLE",
+      "team": "GB",
+      "opponent": "CLE",
+      "model_prob": 0.6808,
+      "market_prob_devig": 0.8036,
+      "edge": -0.1227,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_HOU_JAX",
+      "team": "HOU",
+      "opponent": "JAX",
+      "model_prob": 0.381,
+      "market_prob_devig": 0.4661,
+      "edge": -0.0852,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_HOU_JAX",
+      "team": "JAX",
+      "opponent": "HOU",
+      "model_prob": 0.6069,
+      "market_prob_devig": 0.5339,
+      "edge": 0.073,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_IND_TEN",
+      "team": "IND",
+      "opponent": "TEN",
+      "model_prob": 0.7373,
+      "market_prob_devig": 0.6884,
+      "edge": 0.0489,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_IND_TEN",
+      "team": "TEN",
+      "opponent": "IND",
+      "model_prob": 0.288,
+      "market_prob_devig": 0.3116,
+      "edge": -0.0236,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_KC_NYG",
+      "team": "KC",
+      "opponent": "NYG",
+      "model_prob": 0.7095,
+      "market_prob_devig": 0.7435,
+      "edge": -0.034,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_KC_NYG",
+      "team": "NYG",
+      "opponent": "KC",
+      "model_prob": 0.3239,
+      "market_prob_devig": 0.2565,
+      "edge": 0.0673,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_LA_PHI",
+      "team": "LA",
+      "opponent": "PHI",
+      "model_prob": 0.3265,
+      "market_prob_devig": 0.3572,
+      "edge": -0.0307,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_LA_PHI",
+      "team": "PHI",
+      "opponent": "LA",
+      "model_prob": 0.6836,
+      "market_prob_devig": 0.6428,
+      "edge": 0.0408,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_LV_WAS",
+      "team": "LV",
+      "opponent": "WAS",
+      "model_prob": 0.4166,
+      "market_prob_devig": 0.4135,
+      "edge": 0.0031,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_LV_WAS",
+      "team": "WAS",
+      "opponent": "LV",
+      "model_prob": 0.5158,
+      "market_prob_devig": 0.5865,
+      "edge": -0.0708,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_MIA_BUF",
+      "team": "BUF",
+      "opponent": "MIA",
+      "model_prob": 0.781,
+      "market_prob_devig": 0.8675,
+      "edge": -0.0865,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_MIA_BUF",
+      "team": "MIA",
+      "opponent": "BUF",
+      "model_prob": 0.2483,
+      "market_prob_devig": 0.1325,
+      "edge": 0.1158,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_NO_SEA",
+      "team": "NO",
+      "opponent": "SEA",
+      "model_prob": 0.2089,
+      "market_prob_devig": 0.2318,
+      "edge": -0.0229,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_NO_SEA",
+      "team": "SEA",
+      "opponent": "NO",
+      "model_prob": 0.7666,
+      "market_prob_devig": 0.7682,
+      "edge": -0.0015,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_NYJ_TB",
+      "team": "NYJ",
+      "opponent": "TB",
+      "model_prob": 0.3757,
+      "market_prob_devig": 0.2457,
+      "edge": 0.13,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_NYJ_TB",
+      "team": "TB",
+      "opponent": "NYJ",
+      "model_prob": 0.5907,
+      "market_prob_devig": 0.7543,
+      "edge": -0.1636,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_PIT_NE",
+      "team": "NE",
+      "opponent": "PIT",
+      "model_prob": 0.4589,
+      "market_prob_devig": 0.4773,
+      "edge": -0.0184,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    },
+    {
+      "game_id": "2025_03_PIT_NE",
+      "team": "PIT",
+      "opponent": "NE",
+      "model_prob": 0.5707,
+      "market_prob_devig": 0.5227,
+      "edge": 0.0479,
+      "qualifies": false,
+      "reason": "insufficient history (2 games, need 4)"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+== 08 — Interactions
+  figure -> 08_interactions.png
+  data   -> data/08_interactions.csv
+                          interaction a_tercile b_tercile  win_rate
+        Mobile QB vs pressure defense       low       low  0.568182
+        Mobile QB vs pressure defense       low       mid  0.526690
+        Mobile QB vs pressure defense       low      high  0.485246
+        Mobile QB vs pressure defense       mid       low  0.482759
+        Mobile QB vs pressure defense       mid       mid  0.486111
+        Mobile QB vs pressure defense       mid      high  0.416974
+        Mobile QB vs pressure defense      high       low  0.550676
+        Mobile QB vs pressure defense      high       mid  0.507143
+        Mobile QB vs pressure defense      high      high  0.476190
+Run-heavy offense vs weak run defense       low       low  0.510563
+Run-heavy offense vs weak run defense       low       mid  0.560284
+Run-heavy offense vs weak run defense       low      high  0.538732
+Run-heavy offense vs weak run defense       mid       low  0.408088
+Run-heavy offense vs weak run defense       mid       mid  0.523649
+Run-heavy offense vs weak run defense       mid      high  0.526690
+Run-heavy offense vs weak run defense      high       low  0.459184
+Run-heavy offense vs weak run defense      high       mid  0.494465
+Run-heavy offense vs weak run defense      high      high  0.475352

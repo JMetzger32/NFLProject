@@ -1,0 +1,11 @@
+== 04 — The EARLY/LATE split — tested and rejected
+  data   -> data/04_regime_gap_test.csv
+ early_market_auc  late_market_auc  observed_gap   ci_lo  ci_hi  frac_early_le_late  significant
+           0.7465           0.7041        0.0423 -0.0421 0.1266              0.1656        False
+
+Observed gap +0.0423, bootstrap 95% CI [-0.0421, +0.1266].
+The CI straddles zero: the regime gap is NOT statistically significant.
+The split is therefore unjustified and has been removed. It cost training
+data (978/1,190 rows instead of 2,168) and raised the worst overfit gap
+from 0.052 to 0.123 for no measurable benefit.
+  figure -> 04_regime_gap.png

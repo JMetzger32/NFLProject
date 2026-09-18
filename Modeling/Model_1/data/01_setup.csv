@@ -1,0 +1,2 @@
+weeks,full_features,train_rows,test_rows,spread_only_auc,expected,always_pick_favorite_accuracy
+1-18 (single model),29,2168,542,0.7187402132323906,0.7187,0.6531365313653137

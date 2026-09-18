@@ -1,0 +1,16 @@
+feature,auc,lower_is_better
+def_epa_allowed_r4_diff,0.4354164561610177,True
+def_points_per_drive_r4_diff,0.4497109192668735,True
+def_epa_allowed_r4,0.4546893992706801,True
+def_epa_allowed_r8,0.46288379108576155,True
+def_points_per_drive_r4,0.46667310521990324,True
+def_pass_epa_allowed_r4,0.4676161277146499,True
+def_success_allowed_r4,0.46803104530937045,True
+def_rush_epa_allowed_r4,0.46984050432326296,True
+def_pressure_to_sack_r4,0.48525919892914965,False
+def_3d_stop_rate_r4,0.5068373744482119,False
+def_blitz_rate_r4,0.5214585291555734,False
+def_havoc_rate_r4,0.5284020167025093,False
+def_pressure_rate_r4,0.5330574597815977,False
+def_havoc_rate_r4_diff,0.5425469910219854,False
+def_pressure_rate_r4_diff,0.5481425392279844,False

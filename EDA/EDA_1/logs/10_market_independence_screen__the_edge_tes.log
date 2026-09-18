@@ -1,0 +1,47 @@
+== 10 — Market-independence screen — the edge test
+  data   -> data/10_market_independence.csv
+                     feature    n  raw_corr  raw_auc  corr_with_spread  residual_corr  residual_p  residual_auc  survives_bh
+      def_havoc_rate_r4_diff 2548  0.065067 0.542547          0.018034       0.057941    0.003436      0.538287        False
+         def_3d_stop_rate_r4 2550 -0.000745 0.506837          0.100902      -0.040880    0.039002      0.483200        False
+           def_havoc_rate_r4 2550  0.045852 0.528402          0.012643       0.040853    0.039129      0.525417        False
+          def_epa_allowed_r8 2550 -0.059550 0.462884         -0.245765       0.038890    0.049571      0.525771        False
+             qb_cpoe_r4_diff 2548  0.174114 0.600865          0.352691       0.036959    0.062136      0.520531        False
+           def_blitz_rate_r4 2550  0.043514 0.521459          0.018973       0.036013    0.069026      0.516076        False
+        qb_pressured_rate_r4 2550 -0.024696 0.481788         -0.147943       0.034220    0.084042      0.516246        False
+                travel_miles 2710 -0.032001 0.466406         -0.167754       0.034174    0.075285      0.547966        False
+        qb_bad_throw_rate_r4 2550 -0.064750 0.464364         -0.087429      -0.030271    0.126457      0.483623        False
+     def_pass_epa_allowed_r4 2550 -0.053046 0.467616         -0.204206       0.028354    0.152311      0.516014        False
+def_points_per_drive_r4_diff 2548 -0.084507 0.449711         -0.281173       0.027853    0.159868      0.515679        False
+                 off_cpoe_r4 2550  0.128441 0.572701          0.258368       0.027128    0.170855      0.513063        False
+     def_pressure_to_sack_r4 2550 -0.021514 0.485259          0.013538      -0.026874    0.174896      0.482155        False
+                  qb_cpoe_r4 2550  0.126031 0.569392          0.254677       0.026119    0.187335      0.510614        False
+              qb_epa_r4_diff 2548  0.191388 0.613327          0.538694      -0.025788    0.193156      0.487797        False
+               inj_total_out 2710 -0.073355 0.461832         -0.123633      -0.025134    0.190860      0.502065        False
+                  qb_adot_r4 2550  0.008421 0.506979          0.079818      -0.023237    0.240802      0.488480        False
+              off_success_r4 2550  0.166630 0.600043          0.373910       0.020137    0.309402      0.514932        False
+     def_points_per_drive_r4 2550 -0.058148 0.466673         -0.194059       0.019001    0.337508      0.511348        False
+                     is_home 2710  0.081919 0.540959          0.255076      -0.018582    0.333560      0.430359        False
+
+0 of 55 features survive Benjamini-Hochberg on the residual.
+  figure -> 10_market_independence.png
+  data   -> data/10_incremental_holdout_auc.csv
+
+Holdout (2025) AUC, spread alone = 0.7187
+                     feature  holdout_auc      lift
+                travel_miles     0.719632  0.000892
+       (closing spread only)     0.718740  0.000000
+             qb_cpoe_r4_diff     0.713879 -0.004861
+      def_havoc_rate_r4_diff     0.713864 -0.004876
+                 off_cpoe_r4     0.713633 -0.005107
+           def_havoc_rate_r4     0.713326 -0.005415
+                  qb_cpoe_r4     0.713018 -0.005722
+     def_pressure_to_sack_r4     0.712118 -0.006622
+              qb_epa_r4_diff     0.711849 -0.006891
+        qb_pressured_rate_r4     0.710527 -0.008213
+        qb_bad_throw_rate_r4     0.710334 -0.008406
+           def_blitz_rate_r4     0.708866 -0.009874
+         def_3d_stop_rate_r4     0.708243 -0.010497
+          def_epa_allowed_r8     0.704175 -0.014565
+     def_pass_epa_allowed_r4     0.702530 -0.016210
+def_points_per_drive_r4_diff     0.697793 -0.020947
+  figure -> 10_incremental_auc.png

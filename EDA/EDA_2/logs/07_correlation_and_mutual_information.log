@@ -1,0 +1,52 @@
+== 07 — Correlation and mutual information
+complete-case rows for the matrix: 1,385 of 2,710
+  data   -> data/07_correlation_matrix.csv
+  data   -> data/07_mutual_info.csv
+                           feature  mutual_info
+                    off_3d_rate_r8     0.042897
+            off_yards_per_drive_r8     0.028429
+           roster_continuity_score     0.027813
+              def_takeaway_rate_r4     0.022667
+           turnover_margin_rate_r4     0.022611
+              off_turnover_rate_r8     0.019438
+           off_red_zone_td_rate_r8     0.017990
+              def_takeaway_rate_r8     0.017940
+                  off_drop_rate_r8     0.017758
+              division_familiarity     0.016546
+               qb_time_to_throw_r8     0.015500
+              off_turnover_rate_r4     0.014063
+ def_broken_tackle_rate_allowed_r8     0.013845
+            off_yards_per_drive_r4     0.013291
+     def_penalty_yards_per_game_r8     0.010712
+def_explosive_play_rate_allowed_r4     0.007024
+   def_red_zone_td_rate_allowed_r8     0.006902
+               def_3d_stop_rate_r4     0.006797
+           off_red_zone_td_rate_r4     0.006610
+     off_penalty_yards_per_game_r8     0.006508
+              qb_bad_throw_rate_r8     0.006250
+        off_explosive_play_rate_r8     0.005809
+     off_penalty_yards_per_game_r4     0.005615
+               mobility_pressure_z     0.005089
+                coach_tenure_weeks     0.004179
+                         st_epa_r8     0.002935
+               qb_time_to_throw_r4     0.002899
+            off_plays_per_drive_r8     0.002375
+     def_penalty_yards_per_game_r4     0.002344
+                  off_drop_rate_r4     0.002187
+              qb_bad_throw_rate_r4     0.000000
+def_explosive_play_rate_allowed_r8     0.000000
+        off_avg_start_field_pos_r8     0.000000
+   def_red_zone_td_rate_allowed_r4     0.000000
+           turnover_margin_rate_r8     0.000000
+               def_3d_stop_rate_r8     0.000000
+ def_broken_tackle_rate_allowed_r4     0.000000
+        off_explosive_play_rate_r4     0.000000
+        off_avg_start_field_pos_r4     0.000000
+                         st_epa_r4     0.000000
+             coach_tenure_censored     0.000000
+            off_plays_per_drive_r4     0.000000
+                    rush_matchup_z     0.000000
+                    pass_matchup_z     0.000000
+                    off_3d_rate_r4     0.000000
+  figure -> 07_correlation.png
+  figure -> 07_mutual_info.png

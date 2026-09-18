@@ -1,0 +1,8 @@
+== 06 — Market agreement, re-checked on the bagged model
+  data   -> data/06_agreement.csv
+                           case   n  share  accuracy
+bagged model agrees with market 528 0.9742    0.6553
+         bagged model DISAGREES  14 0.0258    0.4286
+
+Model_1 single-fit baseline: 539/542 agree (99.45%).
+Bagged: 528/542 (97.42%).

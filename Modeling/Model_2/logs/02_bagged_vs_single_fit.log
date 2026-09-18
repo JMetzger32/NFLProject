@@ -1,0 +1,7 @@
+== 02 — Bagged vs single-fit
+  data   -> data/02_bagged_vs_single.csv
+                     model    auc  accuracy  brier  log_loss    ece  vs_benchmark
+ single-fit simple average 0.7060    0.6550 0.2173    0.6226 0.0639       -0.0127
+  BAGGED (block bootstrap) 0.7029    0.6494 0.2183    0.6248 0.0725       -0.0158
+MARKET (moneyline implied) 0.7200    0.6531 0.2128    0.6106 0.0392        0.0013
+  figure -> 02_bagged_vs_single.png

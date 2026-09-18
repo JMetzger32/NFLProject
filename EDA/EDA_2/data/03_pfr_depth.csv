@@ -1,0 +1,9 @@
+feature,auc,lower_is_better,n
+qb_bad_throw_rate_r4,0.46436414570651025,True,2550
+qb_bad_throw_rate_r8,0.4661951349143467,True,2550
+def_broken_tackle_rate_allowed_r4,0.4911597023665989,True,2550
+def_broken_tackle_rate_allowed_r8,0.5058722066111229,True,2550
+off_drop_rate_r4,0.5082851262038454,True,2550
+off_drop_rate_r8,0.5103274188865322,True,2550
+qb_time_to_throw_r8,0.5184054550222922,False,2470
+qb_time_to_throw_r4,0.5255782848151063,False,2470

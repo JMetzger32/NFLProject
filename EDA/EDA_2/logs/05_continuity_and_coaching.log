@@ -1,0 +1,14 @@
+== 05 — Continuity and coaching
+  data   -> data/05_continuity_auc.csv
+                feature      auc    n
+roster_continuity_score 0.604140 1430
+     coach_tenure_weeks 0.534127 2710
+  coach_tenure_censored 0.540221 2710
+   division_familiarity 0.500000 2710
+  figure -> 05_continuity.png
+
+division_familiarity>0 rows by div_game (sanity: same-season repeats should be ~all div_game=1; cross-season repeats can be either):
+          size      mean  max
+div_game                     
+False     1754  0.168757    1
+True       956  2.087866    3

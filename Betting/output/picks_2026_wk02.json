@@ -1,0 +1,336 @@
+{
+  "season": 2026,
+  "week": 2,
+  "generated_at": "2026-09-18T04:38:20.710966+00:00",
+  "model_version": "model_1_bagged_v1",
+  "devig_method": "shin",
+  "status": "no_qualifying_edge",
+  "games_evaluated": 16,
+  "team_rows_evaluated": 32,
+  "qualifying_picks": 0,
+  "insufficient_history": true,
+  "notes": "Only 1 game(s) of in-season history; rolling features are near-empty this early and no edge should be expected.",
+  "picks": [],
+  "all_games": [
+    {
+      "game_id": "2026_02_CAR_ATL",
+      "team": "ATL",
+      "opponent": "CAR",
+      "model_prob": 0.3818,
+      "market_prob_devig": 0.4248,
+      "edge": -0.043,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_CAR_ATL",
+      "team": "CAR",
+      "opponent": "ATL",
+      "model_prob": 0.6231,
+      "market_prob_devig": 0.5752,
+      "edge": 0.0479,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_CIN_HOU",
+      "team": "CIN",
+      "opponent": "HOU",
+      "model_prob": 0.513,
+      "market_prob_devig": 0.4339,
+      "edge": 0.0791,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_CIN_HOU",
+      "team": "HOU",
+      "opponent": "CIN",
+      "model_prob": 0.5381,
+      "market_prob_devig": 0.5661,
+      "edge": -0.0281,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_CLE_TB",
+      "team": "CLE",
+      "opponent": "TB",
+      "model_prob": 0.2973,
+      "market_prob_devig": 0.2012,
+      "edge": 0.0961,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_CLE_TB",
+      "team": "TB",
+      "opponent": "CLE",
+      "model_prob": 0.7621,
+      "market_prob_devig": 0.7988,
+      "edge": -0.0367,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_DET_BUF",
+      "team": "BUF",
+      "opponent": "DET",
+      "model_prob": 0.7296,
+      "market_prob_devig": 0.6826,
+      "edge": 0.0471,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_DET_BUF",
+      "team": "DET",
+      "opponent": "BUF",
+      "model_prob": 0.2888,
+      "market_prob_devig": 0.3174,
+      "edge": -0.0286,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_GB_NYJ",
+      "team": "GB",
+      "opponent": "NYJ",
+      "model_prob": 0.6497,
+      "market_prob_devig": 0.6428,
+      "edge": 0.0069,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_GB_NYJ",
+      "team": "NYJ",
+      "opponent": "GB",
+      "model_prob": 0.3936,
+      "market_prob_devig": 0.3572,
+      "edge": 0.0364,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_IND_KC",
+      "team": "IND",
+      "opponent": "KC",
+      "model_prob": 0.3179,
+      "market_prob_devig": 0.2775,
+      "edge": 0.0404,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_IND_KC",
+      "team": "KC",
+      "opponent": "IND",
+      "model_prob": 0.6734,
+      "market_prob_devig": 0.7225,
+      "edge": -0.0491,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_JAX_DEN",
+      "team": "DEN",
+      "opponent": "JAX",
+      "model_prob": 0.5051,
+      "market_prob_devig": 0.5752,
+      "edge": -0.0701,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_JAX_DEN",
+      "team": "JAX",
+      "opponent": "DEN",
+      "model_prob": 0.4892,
+      "market_prob_devig": 0.4248,
+      "edge": 0.0644,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_LV_LAC",
+      "team": "LAC",
+      "opponent": "LV",
+      "model_prob": 0.6527,
+      "market_prob_devig": 0.7316,
+      "edge": -0.0789,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_LV_LAC",
+      "team": "LV",
+      "opponent": "LAC",
+      "model_prob": 0.3454,
+      "market_prob_devig": 0.2684,
+      "edge": 0.077,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_MIA_SF",
+      "team": "MIA",
+      "opponent": "SF",
+      "model_prob": 0.2008,
+      "market_prob_devig": 0.1214,
+      "edge": 0.0794,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_MIA_SF",
+      "team": "SF",
+      "opponent": "MIA",
+      "model_prob": 0.8024,
+      "market_prob_devig": 0.8786,
+      "edge": -0.0762,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_MIN_CHI",
+      "team": "CHI",
+      "opponent": "MIN",
+      "model_prob": 0.644,
+      "market_prob_devig": 0.6428,
+      "edge": 0.0012,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_MIN_CHI",
+      "team": "MIN",
+      "opponent": "CHI",
+      "model_prob": 0.3277,
+      "market_prob_devig": 0.3572,
+      "edge": -0.0294,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_NO_BAL",
+      "team": "BAL",
+      "opponent": "NO",
+      "model_prob": 0.7264,
+      "market_prob_devig": 0.777,
+      "edge": -0.0506,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_NO_BAL",
+      "team": "NO",
+      "opponent": "BAL",
+      "model_prob": 0.2225,
+      "market_prob_devig": 0.223,
+      "edge": -0.0004,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_NYG_LA",
+      "team": "LA",
+      "opponent": "NYG",
+      "model_prob": 0.7168,
+      "market_prob_devig": 0.7682,
+      "edge": -0.0513,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_NYG_LA",
+      "team": "NYG",
+      "opponent": "LA",
+      "model_prob": 0.3774,
+      "market_prob_devig": 0.2318,
+      "edge": 0.1456,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_PHI_TEN",
+      "team": "PHI",
+      "opponent": "TEN",
+      "model_prob": 0.6765,
+      "market_prob_devig": 0.7352,
+      "edge": -0.0587,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_PHI_TEN",
+      "team": "TEN",
+      "opponent": "PHI",
+      "model_prob": 0.2985,
+      "market_prob_devig": 0.2648,
+      "edge": 0.0337,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_PIT_NE",
+      "team": "NE",
+      "opponent": "PIT",
+      "model_prob": 0.6503,
+      "market_prob_devig": 0.6642,
+      "edge": -0.0139,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_PIT_NE",
+      "team": "PIT",
+      "opponent": "NE",
+      "model_prob": 0.3702,
+      "market_prob_devig": 0.3358,
+      "edge": 0.0344,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_SEA_ARI",
+      "team": "ARI",
+      "opponent": "SEA",
+      "model_prob": 0.3958,
+      "market_prob_devig": 0.3358,
+      "edge": 0.06,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_SEA_ARI",
+      "team": "SEA",
+      "opponent": "ARI",
+      "model_prob": 0.6629,
+      "market_prob_devig": 0.6642,
+      "edge": -0.0013,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_WAS_DAL",
+      "team": "DAL",
+      "opponent": "WAS",
+      "model_prob": 0.674,
+      "market_prob_devig": 0.6642,
+      "edge": 0.0098,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    },
+    {
+      "game_id": "2026_02_WAS_DAL",
+      "team": "WAS",
+      "opponent": "DAL",
+      "model_prob": 0.3519,
+      "market_prob_devig": 0.3358,
+      "edge": 0.0161,
+      "qualifies": false,
+      "reason": "insufficient history (1 games, need 4)"
+    }
+  ]
+}

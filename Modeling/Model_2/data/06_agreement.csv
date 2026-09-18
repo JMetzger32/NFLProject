@@ -1,0 +1,3 @@
+case,n,share,accuracy
+bagged model agrees with market,528,0.974169741697417,0.6553030303030303
+bagged model DISAGREES,14,0.025830258302583026,0.42857142857142855

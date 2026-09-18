@@ -1,0 +1,9 @@
+== 05 — Calibration at output — Platt, judged on reliability
+  data   -> data/05_calibration_metrics.csv
+           stage    auc  brier  log_loss    ece  mean_pred  base_rate  n_calibration_rows
+    uncalibrated 0.7007 0.2188    0.6261 0.0691     0.4986        0.5                 544
+Platt-calibrated 0.7007 0.2204    0.6298 0.0784     0.4991        0.5                 544
+
+AUC identical before/after confirms Platt is monotonic (cannot change
+ranking). Judge calibration on Brier/ECE/log-loss only.
+  figure -> 05_calibration.png

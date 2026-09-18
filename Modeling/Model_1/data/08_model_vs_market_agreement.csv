@@ -1,0 +1,3 @@
+case,n,share,accuracy
+model agrees with market,539,0.9944649446494465,0.6549165120593692
+model DISAGREES with market,3,0.005535055350553505,0.6666666666666666
