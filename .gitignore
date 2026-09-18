@@ -218,7 +218,13 @@ __marimo__/
 .streamlit/secrets.toml
 
 # --- NFLProject-specific ---
-pgdata/          # local Postgres cluster (2.3 GB)
-data/raw/        # cached parquet/csv pulls
-Betting/output/*.csv
+# NOTE: .gitignore has no inline comments — a trailing "# ..." becomes part of the
+# pattern and silently matches nothing. Comments get their own line.
+
+# local Postgres cluster (2.3 GB)
+pgdata/
+
+# cached parquet/csv pulls from nflverse
+data/raw/
+
 .DS_Store
