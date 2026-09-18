@@ -1,0 +1,525 @@
+{
+  "generated_at": "2026-09-18T20:54:06+00:00",
+  "latest": {
+    "season": 2026,
+    "week": 3,
+    "status": "no_qualifying_edge",
+    "generated_at": "2026-09-18T18:20:50.820861+00:00",
+    "games_evaluated": 16,
+    "qualifying_picks": 0,
+    "insufficient_history": true,
+    "notes": "Only 1 game(s) of in-season history; rolling features are near-empty this early and no edge should be expected.",
+    "history_source_counts": {
+      "blended_prior_season": 32
+    },
+    "picks": [],
+    "games": [
+      {
+        "team": "ARI",
+        "opponent": "SF",
+        "model_prob": 0.2624,
+        "market_prob_devig": 0.1919,
+        "edge": 0.0706,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "SF",
+        "opponent": "ARI",
+        "model_prob": 0.7927,
+        "market_prob_devig": 0.8081,
+        "edge": -0.0154,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "ATL",
+        "opponent": "GB",
+        "model_prob": 0.3174,
+        "market_prob_devig": 0.2648,
+        "edge": 0.0526,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "GB",
+        "opponent": "ATL",
+        "model_prob": 0.7294,
+        "market_prob_devig": 0.7352,
+        "edge": -0.0058,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "BAL",
+        "opponent": "DAL",
+        "model_prob": 0.6081,
+        "market_prob_devig": 0.5865,
+        "edge": 0.0216,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "DAL",
+        "opponent": "BAL",
+        "model_prob": 0.4516,
+        "market_prob_devig": 0.4135,
+        "edge": 0.0381,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "CAR",
+        "opponent": "CLE",
+        "model_prob": 0.588,
+        "market_prob_devig": 0.5661,
+        "edge": 0.0219,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "CLE",
+        "opponent": "CAR",
+        "model_prob": 0.4386,
+        "market_prob_devig": 0.4339,
+        "edge": 0.0047,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "CIN",
+        "opponent": "PIT",
+        "model_prob": 0.6036,
+        "market_prob_devig": 0.5536,
+        "edge": 0.05,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "PIT",
+        "opponent": "CIN",
+        "model_prob": 0.4215,
+        "market_prob_devig": 0.4464,
+        "edge": -0.025,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "HOU",
+        "opponent": "IND",
+        "model_prob": 0.5914,
+        "market_prob_devig": 0.5536,
+        "edge": 0.0378,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "IND",
+        "opponent": "HOU",
+        "model_prob": 0.3896,
+        "market_prob_devig": 0.4464,
+        "edge": -0.0568,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "KC",
+        "opponent": "MIA",
+        "model_prob": 0.6853,
+        "market_prob_devig": 0.7988,
+        "edge": -0.1135,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "MIA",
+        "opponent": "KC",
+        "model_prob": 0.2963,
+        "market_prob_devig": 0.2012,
+        "edge": 0.0951,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "BUF",
+        "opponent": "LAC",
+        "model_prob": 0.5221,
+        "market_prob_devig": 0.5,
+        "edge": 0.0221,
+        "reason": "no market odds available"
+      },
+      {
+        "team": "LAC",
+        "opponent": "BUF",
+        "model_prob": 0.4658,
+        "market_prob_devig": 0.5,
+        "edge": -0.0342,
+        "reason": "no market odds available"
+      },
+      {
+        "team": "DEN",
+        "opponent": "LA",
+        "model_prob": 0.4241,
+        "market_prob_devig": 0.4464,
+        "edge": -0.0223,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "LA",
+        "opponent": "DEN",
+        "model_prob": 0.5923,
+        "market_prob_devig": 0.5536,
+        "edge": 0.0387,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "LV",
+        "opponent": "NO",
+        "model_prob": 0.3778,
+        "market_prob_devig": 0.4027,
+        "edge": -0.0249,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "NO",
+        "opponent": "LV",
+        "model_prob": 0.5818,
+        "market_prob_devig": 0.5973,
+        "edge": -0.0155,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "MIN",
+        "opponent": "TB",
+        "model_prob": 0.4518,
+        "market_prob_devig": 0.4661,
+        "edge": -0.0144,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "TB",
+        "opponent": "MIN",
+        "model_prob": 0.5476,
+        "market_prob_devig": 0.5339,
+        "edge": 0.0137,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "JAX",
+        "opponent": "NE",
+        "model_prob": 0.6334,
+        "market_prob_devig": 0.5536,
+        "edge": 0.0798,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "NE",
+        "opponent": "JAX",
+        "model_prob": 0.416,
+        "market_prob_devig": 0.4464,
+        "edge": -0.0305,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "DET",
+        "opponent": "NYJ",
+        "model_prob": 0.5017,
+        "market_prob_devig": 0.5,
+        "edge": 0.0017,
+        "reason": "no market odds available"
+      },
+      {
+        "team": "NYJ",
+        "opponent": "DET",
+        "model_prob": 0.488,
+        "market_prob_devig": 0.5,
+        "edge": -0.012,
+        "reason": "no market odds available"
+      },
+      {
+        "team": "CHI",
+        "opponent": "PHI",
+        "model_prob": 0.5849,
+        "market_prob_devig": 0.5182,
+        "edge": 0.0668,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "PHI",
+        "opponent": "CHI",
+        "model_prob": 0.437,
+        "market_prob_devig": 0.4818,
+        "edge": -0.0448,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "SEA",
+        "opponent": "WAS",
+        "model_prob": 0.6503,
+        "market_prob_devig": 0.5536,
+        "edge": 0.0967,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "WAS",
+        "opponent": "SEA",
+        "model_prob": 0.3877,
+        "market_prob_devig": 0.4464,
+        "edge": -0.0587,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "NYG",
+        "opponent": "TEN",
+        "model_prob": 0.712,
+        "market_prob_devig": 0.6932,
+        "edge": 0.0188,
+        "reason": "insufficient history (1 games, need 4)"
+      },
+      {
+        "team": "TEN",
+        "opponent": "NYG",
+        "model_prob": 0.2702,
+        "market_prob_devig": 0.3068,
+        "edge": -0.0366,
+        "reason": "insufficient history (1 games, need 4)"
+      }
+    ]
+  },
+  "weeks": [
+    {
+      "season": 2025,
+      "week": 1,
+      "games": 16,
+      "picks": 0,
+      "status": "no_qualifying_edge",
+      "file": "picks_2025_wk01.json"
+    },
+    {
+      "season": 2025,
+      "week": 2,
+      "games": 16,
+      "picks": 0,
+      "status": "no_qualifying_edge",
+      "file": "picks_2025_wk02.json"
+    },
+    {
+      "season": 2025,
+      "week": 3,
+      "games": 16,
+      "picks": 0,
+      "status": "no_qualifying_edge",
+      "file": "picks_2025_wk03.json"
+    },
+    {
+      "season": 2025,
+      "week": 4,
+      "games": 15,
+      "picks": 0,
+      "status": "no_qualifying_edge",
+      "file": "picks_2025_wk04.json"
+    },
+    {
+      "season": 2025,
+      "week": 5,
+      "games": 14,
+      "picks": 4,
+      "status": "picks_available",
+      "file": "picks_2025_wk05.json"
+    },
+    {
+      "season": 2025,
+      "week": 6,
+      "games": 15,
+      "picks": 6,
+      "status": "picks_available",
+      "file": "picks_2025_wk06.json"
+    },
+    {
+      "season": 2025,
+      "week": 7,
+      "games": 15,
+      "picks": 4,
+      "status": "picks_available",
+      "file": "picks_2025_wk07.json"
+    },
+    {
+      "season": 2025,
+      "week": 8,
+      "games": 13,
+      "picks": 4,
+      "status": "picks_available",
+      "file": "picks_2025_wk08.json"
+    },
+    {
+      "season": 2025,
+      "week": 9,
+      "games": 14,
+      "picks": 4,
+      "status": "picks_available",
+      "file": "picks_2025_wk09.json"
+    },
+    {
+      "season": 2025,
+      "week": 10,
+      "games": 14,
+      "picks": 1,
+      "status": "picks_available",
+      "file": "picks_2025_wk10.json"
+    },
+    {
+      "season": 2025,
+      "week": 11,
+      "games": 15,
+      "picks": 2,
+      "status": "picks_available",
+      "file": "picks_2025_wk11.json"
+    },
+    {
+      "season": 2025,
+      "week": 12,
+      "games": 14,
+      "picks": 3,
+      "status": "picks_available",
+      "file": "picks_2025_wk12.json"
+    },
+    {
+      "season": 2025,
+      "week": 13,
+      "games": 16,
+      "picks": 6,
+      "status": "picks_available",
+      "file": "picks_2025_wk13.json"
+    },
+    {
+      "season": 2025,
+      "week": 14,
+      "games": 14,
+      "picks": 4,
+      "status": "picks_available",
+      "file": "picks_2025_wk14.json"
+    },
+    {
+      "season": 2025,
+      "week": 15,
+      "games": 16,
+      "picks": 6,
+      "status": "picks_available",
+      "file": "picks_2025_wk15.json"
+    },
+    {
+      "season": 2025,
+      "week": 16,
+      "games": 16,
+      "picks": 2,
+      "status": "picks_available",
+      "file": "picks_2025_wk16.json"
+    },
+    {
+      "season": 2025,
+      "week": 17,
+      "games": 16,
+      "picks": 5,
+      "status": "picks_available",
+      "file": "picks_2025_wk17.json"
+    },
+    {
+      "season": 2025,
+      "week": 18,
+      "games": 16,
+      "picks": 6,
+      "status": "picks_available",
+      "file": "picks_2025_wk18.json"
+    },
+    {
+      "season": 2026,
+      "week": 2,
+      "games": 16,
+      "picks": 0,
+      "status": "no_qualifying_edge",
+      "file": "picks_2026_wk02.json"
+    },
+    {
+      "season": 2026,
+      "week": 3,
+      "games": 16,
+      "picks": 0,
+      "status": "no_qualifying_edge",
+      "file": "picks_2026_wk03.json"
+    }
+  ],
+  "metrics": {
+    "holdout": [
+      {
+        "model": "LR",
+        "role": "single",
+        "auc": 0.6982,
+        "ci": [
+          0.6536,
+          0.7398
+        ],
+        "accuracy": 0.6494,
+        "brier": 0.2194,
+        "ece": 0.0622
+      },
+      {
+        "model": "GBM",
+        "role": "single",
+        "auc": 0.6964,
+        "ci": [
+          0.6518,
+          0.7393
+        ],
+        "accuracy": 0.6531,
+        "brier": 0.2199,
+        "ece": 0.0684
+      },
+      {
+        "model": "RF",
+        "role": "single",
+        "auc": 0.7047,
+        "ci": [
+          0.6608,
+          0.7458
+        ],
+        "accuracy": 0.6531,
+        "brier": 0.2186,
+        "ece": 0.0625
+      },
+      {
+        "model": "SimpleAvg",
+        "role": "PRODUCTION",
+        "auc": 0.7007,
+        "ci": [
+          0.6562,
+          0.7425
+        ],
+        "accuracy": 0.655,
+        "brier": 0.2188,
+        "ece": 0.0691
+      },
+      {
+        "model": "Stacked",
+        "role": "comparison-only",
+        "auc": 0.7002,
+        "ci": [
+          0.6565,
+          0.7416
+        ],
+        "accuracy": 0.6494,
+        "brier": 0.2246,
+        "ece": 0.078
+      },
+      {
+        "model": "MARKET (spread only)",
+        "role": "benchmark",
+        "auc": 0.7187,
+        "ci": [
+          0.6756,
+          0.7595
+        ],
+        "accuracy": 0.6531,
+        "brier": 0.2123,
+        "ece": 0.0348
+      }
+    ],
+    "benchmark_auc": 0.7187,
+    "production_auc": 0.7007,
+    "edge_test": {
+      "picks": 49,
+      "accuracy": 0.2245,
+      "mean_edge": 0.1023,
+      "team_games": 542
+    }
+  },
+  "live": {
+    "graded": 0,
+    "picks": 0
+  }
+}

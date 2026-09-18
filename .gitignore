@@ -228,3 +228,10 @@ pgdata/
 data/raw/
 
 .DS_Store
+
+# GitHub's Python template ignores /site (it targets MkDocs output). This project
+# uses site/ for the GitHub Pages payload, which MUST be committed. Git cannot
+# re-include a file whose parent directory is excluded, so the directory has to be
+# un-ignored first — order matters here.
+!/site/
+!/site/data.json

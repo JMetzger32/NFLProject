@@ -2,6 +2,20 @@
 
 Project to try and predict nfl games and track stats throughout the year.
 
+**Live site:** https://jmetzger32.github.io/NFLProject/
+
+Regenerate what the site shows after any new week:
+
+```bash
+python Betting/weekly_picks.py --season 2026 --week 4   # generate picks
+python Betting/build_site.py                            # refresh site/data.json
+git add site/data.json Betting/output && git commit -m "week 4" && git push
+```
+
+The page is a pure rendering layer over `site/data.json` — it holds no numbers of
+its own, so it cannot drift from what the pipeline actually produced.
+
+
 
 Historical NFL statistics in PostgreSQL, built as the data foundation for modeling
 NFL games and finding edges against the betting market.
