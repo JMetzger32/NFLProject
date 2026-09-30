@@ -120,6 +120,32 @@ chart QB1 / last known starter), falling back to prior-season league average.
   `widen_ci_for_blend()` inflates the interval by `1 + (1 - weight)` so a blended row
   must clear a higher bar. Those stay useful for flagging even with the blend off.
 
+## Weekly in-season update — run ALL of it, in this order
+
+```bash
+./venv/bin/python scripts/backfill_all.py 2026                     # every table, not just schedules
+./venv/bin/python Betting/grade_week.py --season 2026 --week <W-1>
+./venv/bin/python Betting/weekly_picks.py --season 2026 --week <W>
+./venv/bin/python Betting/build_site.py
+```
+
+- **Step 1 must be the full-season backfill.** Through week 3 of 2026 only scores
+  were being refreshed: `plays` / `team_weekly_stats` / `snap_counts` stayed at
+  week 1, so the week-3 predictions were built on one week of stats. Nothing errors
+  when this happens — the rolling features just silently reach back to older games.
+  After backfilling, confirm `max(week)` in `plays` and `team_weekly_stats` equals
+  the last completed week.
+- **Injury features are silently zero when run before the injury report exists.**
+  `_add_injury_counts` fills missing reports with 0 ("nobody out"), and the week's
+  report isn't published until Wed–Fri. A Tuesday run therefore scores every team
+  as fully healthy on `inj_qb_out` / `inj_ol_out` / `inj_total_out`. For injury-aware
+  predictions, re-run steps 1, 3, 4 after Friday's final game statuses.
+- PFR advanced stats (`pfr_adv_*`) typically lag a day or two behind the rest of
+  nflverse; a Monday/Tuesday backfill may have only a couple of teams for the latest
+  week. Rolling features degrade gracefully (reach back over nulls).
+- Week 1 of 2026 was predicted retroactively, so it is intentionally NOT in
+  `pick_results`; don't "fix" that by grading it.
+
 ## Betting pipeline invariants (`Betting/`, `src/odds.py`, `src/bootstrap.py`)
 
 - **Never compare against a raw implied probability** — always de-vig first.
